@@ -1,0 +1,19 @@
+=form_tag "/stays", :method => "post" do
+  = label_tag :user_email, "e-mail :" 
+  = text_field :user, :email
+  %br
+  = label_tag :user_first_name, "Prénom :" 
+  = text_field :user, :first_name
+  %br
+  = label_tag :user_last_name, "Nom :" 
+  = text_field :user, :last_name
+  %br
+  = label_tag :arrival_date, "Date d'arrivée"
+  = date_select :stay, :arrival_date
+  %br
+  = label_tag :departure_date, "Date de départ"
+  = date_select :stay, :departure_date 
+  %br
+  = submit_tag "Réserver"
+
+= link_to "Retour à l'accueil", root_path    
