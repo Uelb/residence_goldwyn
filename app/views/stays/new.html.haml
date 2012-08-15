@@ -1,19 +1,29 @@
 =form_tag "/stays", :method => "post" do
   = label_tag :user_email, "e-mail :" 
   = text_field :user, :email
-  %br
-  = label_tag :user_first_name, "Prénom :" 
-  = text_field :user, :first_name
-  %br
-  = label_tag :user_last_name, "Nom :" 
-  = text_field :user, :last_name
-  %br
+  
   = label_tag :arrival_date, "Date d'arrivée"
-  = date_select :stay, :arrival_date
-  %br
+  = calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago
+  
   = label_tag :departure_date, "Date de départ"
-  = date_select :stay, :departure_date 
-  %br
+  = calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago
+  
+  = label_tag :quantity, "Nombre de personnes"
+  = select :stay, :quantity, [1,2,3,4]
+  
   = submit_tag "Réserver"
 
-= link_to "Retour à l'accueil", root_path    
+= link_to "Retour à l'accueil", root_path
+
+:coffeescript
+   $(document).ready () ->
+    $("#stay_arrival_date_3i").change (e) ->
+      console.log e
+      current_value= $('#stay_arrival_date_3i option:selected').val()
+      if current_value < 31
+        current_value++
+      else
+        current_value=1
+        $('')
+      $('#stay_departure_date_3i option:selected').removeAttr 'selected'
+      $("#stay_departure_date_3i option[value="+current_value+"]").attr 'selected','selected'

@@ -5,7 +5,7 @@ ResidenceGoldwyn::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config   
   
-  root :to => "home#index"
+  root :to => "stays#new"
    
   resources :stays, :only => [:index, :new, :create]
   resource :users, :only => [:new, :create] 
