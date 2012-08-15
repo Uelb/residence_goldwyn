@@ -3,27 +3,44 @@
   = text_field :user, :email
   
   = label_tag :arrival_date, "Date d'arrivée"
-  = calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago
+  = text_field :stay, :arrival_date
   
   = label_tag :departure_date, "Date de départ"
-  = calendar_date_select_tag "e_date", nil, :embedded => true, :year_range => 10.years.ago..0.years.ago
+  = text_field :stay, :departure_date
   
   = label_tag :quantity, "Nombre de personnes"
-  = select :stay, :quantity, [1,2,3,4]
+  = select :stay, :quantity, 1..5
   
   = submit_tag "Réserver"
 
 = link_to "Retour à l'accueil", root_path
 
-:coffeescript
-   $(document).ready () ->
-    $("#stay_arrival_date_3i").change (e) ->
-      console.log e
-      current_value= $('#stay_arrival_date_3i option:selected').val()
-      if current_value < 31
-        current_value++
-      else
-        current_value=1
-        $('')
-      $('#stay_departure_date_3i option:selected').removeAttr 'selected'
-      $("#stay_departure_date_3i option[value="+current_value+"]").attr 'selected','selected'
+:javascript
+  $(function() {
+    $.datepicker.setDefaults($.datepicker.regional['fr']);
+    $( "#stay_arrival_date" ).datepicker({
+      minDate: 0,
+      defaultDate: "+1w",
+      regional: "fr",
+      dateFormat: "dd/mm/yy",
+      changeMonth: true,
+      showOtherMonths:true,
+      selectOtherMonths: true,
+      onSelect: function( selectedDate ) {
+        currentDate= $("#stay_arrival_date").datepicker("getDate")
+      	$( "#stay_departure_date" ).datepicker( "option", "minDate",new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1));
+      }
+      });
+    $( "#stay_departure_date" ).datepicker({
+      minDate: 1,
+      defaultDate: "+1w",
+      dateFormat: "dd/mm/yy",
+      showOtherMonths:true,
+      selectOtherMonths: true,
+      changeMonth: true,
+      onSelect: function( selectedDate ) {
+        currentDate= $("#stay_departure_date").datepicker("getDate")
+      	$( "#stay_arrival_date" ).datepicker( "option", "maxDate", new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - 1) );
+      }
+    });
+  });
