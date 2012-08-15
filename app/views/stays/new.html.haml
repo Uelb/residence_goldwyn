@@ -1,6 +1,4 @@
 =form_tag "/stays", :method => "post" do
-  = label_tag :user_email, "e-mail :" 
-  = text_field :user, :email
   
   = label_tag :arrival_date, "Date d'arrivée"
   = text_field :stay, :arrival_date
@@ -8,8 +6,10 @@
   = label_tag :departure_date, "Date de départ"
   = text_field :stay, :departure_date
   
-  = label_tag :quantity, "Nombre de personnes"
-  = select :stay, :quantity, 1..5
+  = label_tag :quantity, "Nombre d'adultes"
+  = select :stay, :number_of_adults, 1..5
+  = label_tag :quantity, "Nombre d'enfants"
+  = select :stay, :number_of_children, 0..5
   
   = submit_tag "Réserver"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808201122) do
+ActiveRecord::Schema.define(:version => 20120815160012) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20120808201122) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "rooms", :force => true do |t|
-    t.string   "name",        :null => false
+    t.string   "name"
     t.text     "description"
     t.string   "dimension"
     t.datetime "created_at",  :null => false
@@ -62,12 +62,14 @@ ActiveRecord::Schema.define(:version => 20120808201122) do
   add_index "rooms_stays", ["room_id", "stay_id"], :name => "index_rooms_stays_on_room_id_and_stay_id"
 
   create_table "stays", :force => true do |t|
-    t.datetime "arrival_date",                      :null => false
+    t.datetime "arrival_date"
     t.datetime "departure_date"
-    t.integer  "user_id",                           :null => false
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.boolean  "paid",           :default => false
+    t.integer  "user_id"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "paid",               :default => false
+    t.integer  "number_of_adults",                      :null => false
+    t.integer  "number_of_children", :default => 0
   end
 
   create_table "users", :force => true do |t|
