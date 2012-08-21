@@ -8,7 +8,9 @@ ResidenceGoldwyn::Application.routes.draw do
   root :to => "stays#new"
    
   resources :stays, :only => [:index, :new, :create]
-  resource :users, :only => [:new, :create] 
+  resource :users, :only => [:new, :create]
+  resources :rooms, :only => [:index,:show]
+  get 'payment' => "pages#payment", :as => 'payment'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

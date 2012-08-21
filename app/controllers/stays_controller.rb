@@ -2,6 +2,7 @@
 class StaysController < ApplicationController  
   
   def new
+    @available_rooms= Room.avalaible
   end        
   
   def create
@@ -12,10 +13,17 @@ class StaysController < ApplicationController
     @stay.number_of_children= params[:stay][:number_of_children] 
     if @stay.save
       session[:stay_id]= @stay.id 
-      redirect_to new_stay_path, :notice => "Le séjour a bien été réservé"
+      redirect_to rooms_path
     else
       redirect_to new_stay_path, :notice => "Il semblerait qu'une erreur se soit produite"
     end
+  end
+  
+  def update_with_rooms
+    @stay= Stay.find session[:stay_id]
+    @rooms= Room.where(id: params[:room].map { |key,value| value.to_i})
+    @stay.rooms += @rooms
+    redirect_to payment_path
   end
     
     
