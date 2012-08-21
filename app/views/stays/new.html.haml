@@ -1,11 +1,11 @@
+-# encoding: utf-8
 =form_tag "/stays", :method => "post" do
   
   = label_tag :arrival_date, "Date d'arrivée"
   = text_field :stay, :arrival_date
   
   = label_tag :departure_date, "Date de départ"
-  = text_field :stay, :departure_date
-  
+  = text_field :stay, :departure_date  
   = label_tag :quantity, "Nombre d'adultes"
   = select :stay, :number_of_adults, 1..5
   = label_tag :quantity, "Nombre d'enfants"
@@ -14,6 +14,29 @@
   = submit_tag "Réserver"
 
 = link_to "Retour à l'accueil", root_path
+#prevthumb
+#nextthumb
+
+%a#prevslide.load-item
+%a#nextslide.load-item
+#thumb-tray.load-item
+  #thumb-back
+  #thumb-forward
+#progress-back.load-item
+  #progress-bar
+#controls-wrapper.load-item
+  #controls
+    %a#play-button
+      %img#pauseplay{:src => "/assets/images/supersized/pause.png"}
+    
+    #slidecounter
+      %span.slidenumber
+      %span.totalslides
+    
+    #slidecaption
+    %a#tray-button
+      %img#tray-arrow{:src => "/assets/images/supersized/button-tray-up.png"}
+    %ul#slide-list
 
 :javascript
   $(function() {
@@ -44,3 +67,28 @@
       }
     });
   });
+
+    jQuery(function($){
+        
+        $.supersized({
+        
+          // Functionality
+          slide_interval          :   3000,   // Length between transitions
+          transition              :   1,      // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+          transition_speed    : 700,    // Speed of transition
+                                 
+          // Components             
+          slide_links       : 'blank',  // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+          slides          :   [     // Slideshow Images
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-1.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-1.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-2.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-2.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},  
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-3.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-3.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/wojno-2.jpg', title : 'Image Credit: Colin Wojno', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/wojno-2.jpg', url : 'http://www.nonsensesociety.com/2011/03/colin/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/wojno-3.jpg', title : 'Image Credit: Colin Wojno', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/wojno-3.jpg', url : 'http://www.nonsensesociety.com/2011/03/colin/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-1.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-1.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-2.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-2.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'},
+                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-3.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-3.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'}
+                        ]
+          
+        });
+        });
