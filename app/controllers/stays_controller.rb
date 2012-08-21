@@ -19,9 +19,9 @@ class StaysController < ApplicationController
     end
   end
   
-  def update_with_rooms
-    @stay= Stay.find session[:stay_id]
-    @rooms= Room.where(id: params[:room].map { |key,value| value.to_i})
+  def edit
+    @stay= Stay.find params[:id]
+    @rooms= Room.where(id: params[:room].map { |key,value| key.to_i})
     @stay.rooms += @rooms
     redirect_to payment_path
   end

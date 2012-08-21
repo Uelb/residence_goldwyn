@@ -1,7 +1,7 @@
 %h1
   Disponible
 #avalaible
-  = form_tag do
+  = form_tag edit_stay_path(@stay), :method => :get do
     - unless @avalaible.nil?
       - @avalaible.each do |room|
         %div{:id => "show_room_#{room.id}", :class => "room"}
