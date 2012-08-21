@@ -10,7 +10,7 @@
         = room.dimension
         = room.number_of_rooms.to_s
         = room.sleeping
-        = image_tag room.image_url, :size => "150x150"
+        = image_tag room.image.url, :size => "150x150"
         = room.day_price.to_s+"€/jour"
         = link_to("Voir les détails", room_path(room))
         = check_box :room, room.id
@@ -27,6 +27,6 @@
       = room.dimension
       = room.number_of_rooms.to_s
       = room.sleeping
-      = image_tag room.image_url, :size => "150x150"
+      = image_tag room.image.url, :size => "150x150"
       
 

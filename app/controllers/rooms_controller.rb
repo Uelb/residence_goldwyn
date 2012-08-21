@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
   
   def index
-    @stay= Stay.find session[:stay_id]
+    if !session[:stay_id].nil?
+      @stay= Stay.find session[:stay_id]
+    end
     @avalaible= Array.new
     @reserved= Array.new
     if !session[:stay_id].nil?

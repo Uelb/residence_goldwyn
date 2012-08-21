@@ -8,7 +8,8 @@ class Room < ActiveRecord::Base
   scope :reserved, where(status: RESERVED_STATUS) 
   
   attr_accessible :description, :dimension, :name, :status, :sleeping, :number_of_rooms, :day_price, :week_price 
-  
+  attr_accessible :image
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_and_belongs_to_many :stays
   
   validates_presence_of :name
