@@ -1,0 +1,32 @@
+body{
+	background: #000;
+	color:#fff;
+	font:11px arial, helvetica, tahoma;
+}
+#logo{
+	background:url(/assets/logo-goldwyn.png) no-repeat center center;
+	height:138px;
+	width:180px;
+	position:absolute;
+	top:0;
+	left:100px;
+	z-index:1000;
+}
+#logo h1 span{
+	text-indent:-1000em;
+	overflow:hidden;
+	outline:none;
+	display:block;
+}
+#initform{
+	position:absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	padding:20px 20px 20px 300px;
+	height:50px;
+	background:#222222;
+	color:#ffffff;
+	z-index:500;
+}
+fieldset{display:inline; border:0 none;}
