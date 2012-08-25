@@ -1,5 +1,5 @@
 ResidenceGoldwyn::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "users/sessions"}
 
   ActiveAdmin.routes(self)
 
@@ -11,6 +11,8 @@ ResidenceGoldwyn::Application.routes.draw do
   resource :users, :only => [:new, :create]
   resources :rooms, :only => [:index,:show]
   get 'payment' => "pages#payment", :as => 'payment'
+  get 'agency_reservation' => "pages#agency_reservation", :as => "agency_reservation"
+  get 'before_payment' => "pages#before_payment", :as => "before_payment"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

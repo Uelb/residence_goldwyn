@@ -3,27 +3,20 @@ class RoomsController < ApplicationController
   def index
     if !session[:stay_id].nil?
       @stay= Stay.find session[:stay_id]
+    else
+      redirect_to new_stay_path and return
     end
-    @avalaible= Array.new
-    @reserved= Array.new
-    if !session[:stay_id].nil?
-      stay= Stay.find session[:stay_id].to_i
-      @avalaible= Room.avalaible.includes(:stays)
-      @reserved= @avalaible.reject do |room|
-        if room.stays.empty?
-          true
-        else
-          room.stays.map(&:departure_date).max < stay.arrival_date && room.stays.map(&:arrival_date).min > stay.departure_date
-        end
-      end
-      @avalaible-=@reserved
-    end
-    @avalaible= Room.avalaible if @avalaible.empty?
-    @reserved+= Room.reserved + Room.busy
+    rooms= Room.all
+    @avalaible= rooms.select{ |room| !(room.is_reserved? @stay)}
+    @reserved= rooms - @avalaible
   end
   
   def show
-    @room= Room.find params[:id]
+    if session[:stay_id].nil?
+      redirect_to new_stay_path
+    else
+      @room= Room.find params[:id]
+    end
   end
   
 end

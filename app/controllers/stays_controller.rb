@@ -21,9 +21,13 @@ class StaysController < ApplicationController
   
   def edit
     @stay= Stay.find params[:id]
-    @rooms= Room.where(id: params[:room].map { |key,value| key.to_i})
+    rooms_id= params[:room].select{ |key,value| value == "1" }
+    @rooms= Room.where(id: rooms_id.map { |key,value| key.to_i})
+    if @rooms.empty?
+      redirect_to rooms_path, :alert => "Vous n'avez pas choisi de chambre" and return
+    end
     @stay.rooms += @rooms
-    redirect_to payment_path
+    redirect_to before_payment_path
   end
     
     
