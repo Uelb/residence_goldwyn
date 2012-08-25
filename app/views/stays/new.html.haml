@@ -19,15 +19,12 @@
 
 %a#prevslide.load-item
 %a#nextslide.load-item
-#thumb-tray.load-item
-  #thumb-back
-  #thumb-forward
 #progress-back.load-item
   #progress-bar
 #controls-wrapper.load-item
   #controls
     %a#play-button
-      %img#pauseplay{:src => "/assets/images/supersized/pause.png"}
+      %img#pauseplay{:src => "/assets/supersized/pause.png"}
     
     #slidecounter
       %span.slidenumber
@@ -35,7 +32,7 @@
     
     #slidecaption
     %a#tray-button
-      %img#tray-arrow{:src => "/assets/images/supersized/button-tray-up.png"}
+      %img#tray-arrow{:src => "/assets/supersized/button-tray-up.png"}
     %ul#slide-list
 
 :javascript
@@ -73,21 +70,15 @@
         $.supersized({
         
           // Functionality
-          slide_interval          :   3000,   // Length between transitions
+          slide_interval          :   7000,   // Length between transitions
           transition              :   1,      // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-          transition_speed    : 700,    // Speed of transition
+          transition_speed    : 1000,    // Speed of transition
                                  
           // Components             
           slide_links       : 'blank',  // Individual links for each slide (Options: false, 'num', 'name', 'blank')
           slides          :   [     // Slideshow Images
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-1.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-1.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-2.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-2.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},  
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/kazvan-3.jpg', title : 'Image Credit: Maria Kazvan', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/kazvan-3.jpg', url : 'http://www.nonsensesociety.com/2011/04/maria-kazvan/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/wojno-2.jpg', title : 'Image Credit: Colin Wojno', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/wojno-2.jpg', url : 'http://www.nonsensesociety.com/2011/03/colin/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/wojno-3.jpg', title : 'Image Credit: Colin Wojno', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/wojno-3.jpg', url : 'http://www.nonsensesociety.com/2011/03/colin/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-1.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-1.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-2.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-2.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'},
-                            {image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-3.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-3.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'}
+                            {image : 'http://1.bp.blogspot.com/-BJNnMxoxkMs/TqOkxBgIX6I/AAAAAAAAA84/6yQhOGGmYMU/s1600/340945_10150301735356843_108412031842_8427553_1791147376_o.jpg', title : '#', url : 'http://www.google.fr/'},
+                            {image : 'http://fr.prestige-mls.com/modules/documents/biens/5346/photos/40783.jpg', title : 'Oxynum', url : 'http://www.oxynum.fr/'}
                         ]
           
         });
