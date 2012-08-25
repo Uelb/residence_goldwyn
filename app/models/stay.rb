@@ -7,7 +7,7 @@ class Stay < ActiveRecord::Base
   validates :number_of_adults, :numericality => {:greater_than_or_equal_to => 1}   
   validates_presence_of :arrival_date, :number_of_adults
   before_save :verify_dates
-  
+  before_destroy :turn_rooms_to_avalaible
   
   def verify_dates
     if (self.departure_date != nil && self.departure_date < self.arrival_date) || self.number_of_adults < 1
@@ -26,5 +26,14 @@ class Stay < ActiveRecord::Base
     end
   end
   
+  def paid?
+    self.paid
+  end
+  
+  def turn_rooms_to_avalaible
+    self.rooms.each do |room|
+      room.update_attribute("status",Room::AVALAIBLE_STATUS)
+    end
+  end
   
 end

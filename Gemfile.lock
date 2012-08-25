@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/timcharper/calendar_date_select.git
-  revision: 94a4f933551bfda7be80e4a1d2d00dc5ff228d49
-  specs:
-    calendar_date_select (1.16.4)
-
 GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
@@ -62,6 +56,8 @@ GEM
     bourbon (2.1.1)
       sass (>= 3.1)
     builder (3.0.0)
+    clockwork (0.4.1)
+      tzinfo
     cocaine (0.2.1)
     coderay (1.0.7)
     coffee-filter (0.1.1)
@@ -288,7 +284,7 @@ DEPENDENCIES
   autotest-growl
   autotest-rails
   autotest-standalone
-  calendar_date_select!
+  clockwork
   coffee-filter
   coffee-rails (~> 3.2.1)
   coffee-script
