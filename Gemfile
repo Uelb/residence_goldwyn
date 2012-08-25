@@ -22,7 +22,7 @@ gem 'jquery_mobile-rails'
 gem 'execjs'
 gem 'coffee-script'
 gem 'coffee-filter'
-gem "calendar_date_select", :git => "git://github.com/timcharper/calendar_date_select.git" 
+gem 'clockwork'
 
 #############################################################
 #	Persistence

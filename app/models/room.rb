@@ -17,6 +17,9 @@ class Room < ActiveRecord::Base
   
   def is_reserved? stay
     room_stays= self.stays
+    if self.stays.empty?
+      return false
+    end
     return room_stays.map(&:departure_date).max < stay.arrival_date && room_stays.map(&:arrival_date).min > stay.departure_date
   end 
   
