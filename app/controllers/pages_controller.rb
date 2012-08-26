@@ -15,5 +15,12 @@ class PagesController < ApplicationController
   def agency_reservation
     
   end
+
+  def cgv
+      
+  end
   
+  def pro
+    
+  end
 end
