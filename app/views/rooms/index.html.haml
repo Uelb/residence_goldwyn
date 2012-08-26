@@ -3,6 +3,7 @@
   %h2 Disponible
   #avalaible
     = form_tag edit_stay_path(@stay), :method => :get do
+      = submit_tag "Valider votre réservation"
       - unless @avalaible.nil?
         - @avalaible.each do |room|
           .room{:id => "show_room_#{room.id}"}
@@ -25,7 +26,7 @@
               %span.check
                 = check_box :room, room.id
             .clear
-      = submit_tag "Accéder au paiement"
+      = submit_tag "Valider votre réservation"
   %h2 Réservé ou occupé
   #reserved
     - unless @reserved.nil?
