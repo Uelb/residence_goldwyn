@@ -13,6 +13,8 @@ ResidenceGoldwyn::Application.routes.draw do
   get 'payment' => "pages#payment", :as => 'payment'
   get 'agency_reservation' => "pages#agency_reservation", :as => "agency_reservation"
   get 'before_payment' => "pages#before_payment", :as => "before_payment"
+  get 'cgv' => "pages#cgv", :as => "cgv"
+  get 'pro' => "pages#pro", :as => "pro"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
