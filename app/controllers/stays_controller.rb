@@ -3,7 +3,6 @@ class StaysController < ApplicationController
   
   def new
     @available_rooms= Room.avalaible
-    render :layout => "stays/new"
   end        
   
   def create

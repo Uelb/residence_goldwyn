@@ -1,4 +1,6 @@
 -# encoding: utf-8
+- content_for :head do
+  =stylesheet_link_tag "rooms"
 #logo
   %h1
     %span Résidence Goldwyn
@@ -20,32 +22,32 @@
     = submit_tag "Réserver"
     %div
       = link_to "Retour à l'accueil", root_path
-%div.resa
+.resa
   %h2 Disponible
   #avalaible
     = form_tag edit_stay_path(@stay), :method => :get do
       - unless @avalaible.nil?
         - @avalaible.each do |room|
-          %div{:id => "show_room_#{room.id}", :class => "room"}
+          .room{:id => "show_room_#{room.id}"}
             = image_tag room.image.url, :size => "150x150", :class => "imgRoom"
-            %div.content
+            .content
               %h3.name 
                 = room.name
-              %div.desc
+              .desc
                 = room.description
-              %div.size
+              .size
                 = room.dimension
-              %div.number
+              .number
                 = room.number_of_rooms.to_s+" Pièce(s)"
-              %div.sleep
+              .sleep
                 = room.sleeping
               = link_to("Voir les photos et détails", room_path(room))
-            %div.info
-              %div.price
+            .info
+              .price
                 = room.day_price.to_s+"€/jour"
               %span.check
                 = check_box :room, room.id
-            %div.clear
+            .clear
       = submit_tag "Accéder au paiement"
   %h2 Réservé ou occupé
   #reserved
