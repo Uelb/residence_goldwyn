@@ -1,8 +1,11 @@
-%br
-%br
-%br
-%br
-%br
-%br
-= link_to "Vous êtes un particulier", new_user_registration_path
-= link_to "Vous êtes une agence", agency_reservation_path
+%div.resa
+	= image_tag "http://bocarealestateoffices.com/files/thumb-cache/shutterstock_181256711-9aa232ef118efa330e1a9f2b274627cd-800x200-90-crop.jpg", :class => "imgLog"
+	%div.particulier
+		= link_to "Vous êtes un particulier", new_user_registration_path
+	%div.pro
+		= link_to "Vous êtes une agence", agency_reservation_path
+	%div.clear
+	%div.infogeneral
+		%span.cgv 
+			Toutes réservations effectuée sur le site www.residencegoldwyn.fr seront pris en considération instantanément et de manière prioritaire sur les réservations téléphonique ou par agence après règlement de votre réservation. Nous vous invitons à lire attentivement les 
+		= link_to "conditions générales de ventes", cgv_path
