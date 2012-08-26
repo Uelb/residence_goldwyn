@@ -3,28 +3,6 @@
   =stylesheet_link_tag 'supersized', 'stays/new'
   = javascript_include_tag 'stays/new'
   
-#logo
-  %h1
-    %span Résidence Goldwyn
-
-#initform
-  =form_tag "/stays", :method => "post" do 
-    = field_set_tag "", :class => 'arrival_date' do
-      = label_tag :arrival_date, "Date d'arrivée :"
-      = text_field :stay, :arrival_date
-    = field_set_tag "", :class => 'departure_date' do
-      = label_tag :departure_date, "Date de départ :"
-      = text_field :stay, :departure_date    
-    = field_set_tag "", :class => 'people' do
-      = label_tag :quantity, "Nombre d'adultes :"
-      = select :stay, :number_of_adults, 1..5
-    = field_set_tag "", :class => 'rooms' do
-      = label_tag :quantity, "Nombre d'enfants :"
-      = select :stay, :number_of_children, 0..5
-    
-    = submit_tag "Réserver"
-    %div
-      = link_to "Retour à l'accueil", root_path
 #textHome
   = link_to image_tag( 'image-1.png'), 'http://www.google.fr', :class => 'vignette'
   %h1.residence
