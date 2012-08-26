@@ -13,3 +13,32 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./lib
+$(function() {
+    $.datepicker.setDefaults($.datepicker.regional['fr']);
+    $( "#stay_arrival_date" ).datepicker({
+      minDate: 0,
+      defaultDate: "+1w",
+      regional: "fr",
+      dateFormat: "dd/mm/yy",
+      changeMonth: true,
+      showOtherMonths:true,
+      selectOtherMonths: true,
+      onSelect: function( selectedDate ) {
+        currentDate= $("#stay_arrival_date").datepicker("getDate")
+      	$( "#stay_departure_date" ).datepicker( "option", "minDate",new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1));
+      }
+      });
+    $( "#stay_departure_date" ).datepicker({
+      minDate: 1,
+      defaultDate: "+1w",
+      dateFormat: "dd/mm/yy",
+      showOtherMonths:true,
+      selectOtherMonths: true,
+      changeMonth: true,
+      onSelect: function( selectedDate ) {
+        currentDate= $("#stay_departure_date").datepicker("getDate")
+      	$( "#stay_arrival_date" ).datepicker( "option", "maxDate", new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - 1) );
+      }
+    });
+  });
+
