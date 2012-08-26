@@ -1,3 +1,92 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	background: #fff;
+	color:#333;
+	font:11px arial, helvetica, tahoma;
+	margin: 0;
+	padding: 0;
+}
+.clear{
+	clear: both;
+}
+a{
+	color:#c00;
+}
+#logo{
+	background:url(/assets/logo-goldwyn.png) no-repeat center center;
+	height:138px;
+	width:180px;
+	position:absolute;
+	top:0;
+	left:2%;
+	z-index:1000;
+}
+#logo h1 span{
+	text-indent:-1000em;
+	overflow:hidden;
+	outline:none;
+	display:block;
+}
+#initform{
+	position:relative;
+	top:0;
+	left: 0;
+	width:85%;
+	padding:20px 0 20px 15%;
+	height:50px;
+	background:#222222;
+	color:#ffffff;
+	z-index:500;
+}
+fieldset{display:inline; border:0 none;margin-right:15px;margin-bottom:10px;}
+
+#initform label, #initform input[type=text], #initform input[type=date]{
+	height:20px;
+	line-height: 20px;
+}
+#footer{
+	position: absolute;
+	bottom: 0;
+	height: 20px;
+	font-size: 11px;
+	color: #fff;
+	line-height: 20px;
+	width: 100%;
+	left: 0;
+	text-indent: 20px;
+	background: #000;
+}
+.resa{
+	width:800px;
+	margin:10px auto 0;
+}
+.imgRoom{
+	float: left;
+	padding-right:10px;
+	padding-bottom:20px;
+}
+div.content{
+	width:400px;
+	float: left;
+}
+div.info{
+	width:200px;
+	float:right;
+}
+h3.name{
+	margin:0;
+	padding-bottom:10px;
+	font-size:16px;
+}
+div.content div{
+	font-size:12px;
+}
+div.content a{
+	font-size:12px;
+	margin-top:10px;
+	display:block;
+}
+div.room{border-bottom: 1px dotted #eee;margin-bottom:20px;}

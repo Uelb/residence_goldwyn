@@ -6,87 +6,35 @@
 #initform
   =form_tag "/stays", :method => "post" do 
     = field_set_tag "", :class => 'arrival_date' do
-      = label_tag :arrival_date, "Date d'arrivée"
+      = label_tag :arrival_date, "Date d'arrivée :"
       = text_field :stay, :arrival_date
     = field_set_tag "", :class => 'departure_date' do
-      = label_tag :departure_date, "Date de départ"
+      = label_tag :departure_date, "Date de départ :"
       = text_field :stay, :departure_date    
     = field_set_tag "", :class => 'people' do
-      = label_tag :quantity, "Nombre d'adultes"
+      = label_tag :quantity, "Nombre d'adultes :"
       = select :stay, :number_of_adults, 1..5
     = field_set_tag "", :class => 'rooms' do
-      = label_tag :quantity, "Nombre d'enfants"
+      = label_tag :quantity, "Nombre d'enfants :"
       = select :stay, :number_of_children, 0..5
     
     = submit_tag "Réserver"
+    %div
+      = link_to "Retour à l'accueil", root_path
+#textHome
+  = link_to image_tag( 'image-1.png'), 'http://www.google.fr', :class => 'vignette'
+  %h1.residence
+    Résidence Goldwyn
+  %p.intro 
+    Un espace de prestige situé dans les quartiers résidentielle de la Croisette, Côte d'azur. Une prestation adapté à vos besoins, business, séjour, etc...
+    = link_to "Découvrir la Résidence", 'http://www.google.fr', :class => 'linkedin'
 
-= link_to "Retour à l'accueil", root_path
-#prevthumb
-#nextthumb
+//%a#prevslide.load-item
+//%a#nextslide.load-item
+#footer
+  &copy; Résidence Goldwyn 2012, Cannes (croisettes) | SCI | contact: +33 280 78 09 67
+  |
+  = link_to "Conditions générales de ventes", '/cgv/index.html'
+  |
+  = link_to "Agence et professionnel", '/pro/index.html' 
 
-%a#prevslide.load-item
-%a#nextslide.load-item
-#progress-back.load-item
-  #progress-bar
-#controls-wrapper.load-item
-  #controls
-    %a#play-button
-      %img#pauseplay{:src => "/assets/supersized/pause.png"}
-    
-    #slidecounter
-      %span.slidenumber
-      %span.totalslides
-    
-    #slidecaption
-    %a#tray-button
-      %img#tray-arrow{:src => "/assets/supersized/button-tray-up.png"}
-    %ul#slide-list
-
-:javascript
-  $(function() {
-    $.datepicker.setDefaults($.datepicker.regional['fr']);
-    $( "#stay_arrival_date" ).datepicker({
-      minDate: 0,
-      defaultDate: "+1w",
-      regional: "fr",
-      dateFormat: "dd/mm/yy",
-      changeMonth: true,
-      showOtherMonths:true,
-      selectOtherMonths: true,
-      onSelect: function( selectedDate ) {
-        currentDate= $("#stay_arrival_date").datepicker("getDate")
-      	$( "#stay_departure_date" ).datepicker( "option", "minDate",new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1));
-      }
-      });
-    $( "#stay_departure_date" ).datepicker({
-      minDate: 1,
-      defaultDate: "+1w",
-      dateFormat: "dd/mm/yy",
-      showOtherMonths:true,
-      selectOtherMonths: true,
-      changeMonth: true,
-      onSelect: function( selectedDate ) {
-        currentDate= $("#stay_departure_date").datepicker("getDate")
-      	$( "#stay_arrival_date" ).datepicker( "option", "maxDate", new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - 1) );
-      }
-    });
-  });
-
-    jQuery(function($){
-        
-        $.supersized({
-        
-          // Functionality
-          slide_interval          :   7000,   // Length between transitions
-          transition              :   1,      // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-          transition_speed    : 1000,    // Speed of transition
-                                 
-          // Components             
-          slide_links       : 'blank',  // Individual links for each slide (Options: false, 'num', 'name', 'blank')
-          slides          :   [     // Slideshow Images
-                            {image : 'http://1.bp.blogspot.com/-BJNnMxoxkMs/TqOkxBgIX6I/AAAAAAAAA84/6yQhOGGmYMU/s1600/340945_10150301735356843_108412031842_8427553_1791147376_o.jpg', title : '#', url : 'http://www.google.fr/'},
-                            {image : 'http://fr.prestige-mls.com/modules/documents/biens/5346/photos/40783.jpg', title : 'Oxynum', url : 'http://www.oxynum.fr/'}
-                        ]
-          
-        });
-        });

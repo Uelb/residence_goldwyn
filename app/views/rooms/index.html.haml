@@ -1,32 +1,61 @@
-%h1
-  Disponible
-#avalaible
-  = form_tag edit_stay_path(@stay), :method => :get do
-    - unless @avalaible.nil?
-      - @avalaible.each do |room|
-        %div{:id => "show_room_#{room.id}", :class => "room"}
+-# encoding: utf-8
+#logo
+  %h1
+    %span Résidence Goldwyn
+
+#initform
+  =form_tag "/stays", :method => "post" do 
+    = field_set_tag "", :class => 'arrival_date' do
+      = label_tag :arrival_date, "Date d'arrivée :"
+      = text_field :stay, :arrival_date
+    = field_set_tag "", :class => 'departure_date' do
+      = label_tag :departure_date, "Date de départ :"
+      = text_field :stay, :departure_date    
+    = field_set_tag "", :class => 'people' do
+      = label_tag :quantity, "Nombre d'adultes :"
+      = select :stay, :number_of_adults, 1..5
+    = field_set_tag "", :class => 'rooms' do
+      = label_tag :quantity, "Nombre d'enfants :"
+      = select :stay, :number_of_children, 0..5
+    = submit_tag "Réserver"
+    %div
+      = link_to "Retour à l'accueil", root_path
+%div.resa
+  %h2 Disponible
+  #avalaible
+    = form_tag edit_stay_path(@stay), :method => :get do
+      - unless @avalaible.nil?
+        - @avalaible.each do |room|
+          %div{:id => "show_room_#{room.id}", :class => "room"}
+            = image_tag room.image.url, :size => "150x150", :class => "imgRoom"
+            %div.content
+              %h3.name 
+                = room.name
+              %div.desc
+                = room.description
+              %div.size
+                = room.dimension
+              %div.number
+                = room.number_of_rooms.to_s+" Pièce(s)"
+              %div.sleep
+                = room.sleeping
+              = link_to("Voir les photos et détails", room_path(room))
+            %div.info
+              %div.price
+                = room.day_price.to_s+"€/jour"
+              %span.check
+                = check_box :room, room.id
+            %div.clear
+      = submit_tag "Accéder au paiement"
+  %h2 Réservé ou occupé
+  #reserved
+    - unless @reserved.nil?
+      - @reserved.each do |room|
+        = image_tag room.image.url, :size => "150x150"
         = room.name
         = room.description
         = room.dimension
         = room.number_of_rooms.to_s
         = room.sleeping
-        = image_tag room.image.url, :size => "150x150"
-        = room.day_price.to_s+"€/jour"
-        = link_to("Voir les détails", room_path(room))
-        = check_box :room, room.id
-        %br
-    = submit_tag "Accéder au paiement"
-%h1 
-  Réservé ou occupé
-#reserved
-  - unless @reserved.nil?
-    - @reserved.each do |room|
-      = "toto"
-      = room.name
-      = room.description
-      = room.dimension
-      = room.number_of_rooms.to_s
-      = room.sleeping
-      = image_tag room.image.url, :size => "150x150"
       
 
