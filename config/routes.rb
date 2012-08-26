@@ -8,7 +8,6 @@ ResidenceGoldwyn::Application.routes.draw do
   root :to => "stays#new"
    
   resources :stays, :only => [:index, :new, :create, :edit]
-  resource :users, :only => [:new, :create]
   resources :rooms, :only => [:index,:show]
   get 'payment' => "pages#payment", :as => 'payment'
   get 'agency_reservation' => "pages#agency_reservation", :as => "agency_reservation"

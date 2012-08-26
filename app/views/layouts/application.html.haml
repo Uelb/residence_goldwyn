@@ -9,8 +9,9 @@
     = favicon_link_tag "favicon.ico"
     = yield :head
   %body
-    //%p.notice= notice
-    //%p.alert= alert
+    - if notice || alert
+      %p.notice= notice
+      %p.alert= alert
     #logo
       %h1
         %span Résidence Goldwyn

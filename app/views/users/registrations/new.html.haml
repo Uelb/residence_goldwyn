@@ -1,0 +1,37 @@
+%h2 Sign up
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+	= devise_error_messages!
+
+	%div
+		= f.label :email
+		= f.email_field :email
+
+	%div
+		= f.label :password, "Mot de passe"
+		= f.password_field :password
+
+	%div
+		= f.label :password_confirmation, "Confirmation du mot de passe"
+		= f.password_field :password_confirmation
+
+	%div
+		= f.label :address
+		%br
+		= f.text_area :address
+		%br
+		= f.label :phone
+		%br
+		= f.phone_field :phone
+		%br
+		= f.label :first_name
+		%br
+		= f.text_field :first_name
+		%br
+		= f.label :last_name
+		%br
+		= f.text_field :last_name
+
+	= f.submit "S'enregister et Continuer sa réservation"
+
+= render :partial => "users/shared/links"
