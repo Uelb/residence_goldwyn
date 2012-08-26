@@ -1,3 +1,24 @@
+#logo
+  %h1
+    %span Résidence Goldwyn
+
+#initform
+  =form_tag "/stays", :method => "post" do 
+    = field_set_tag "", :class => 'arrival_date' do
+      = label_tag :arrival_date, "Date d'arrivée :"
+      = text_field :stay, :arrival_date
+    = field_set_tag "", :class => 'departure_date' do
+      = label_tag :departure_date, "Date de départ :"
+      = text_field :stay, :departure_date    
+    = field_set_tag "", :class => 'people' do
+      = label_tag :quantity, "Nombre d'adultes :"
+      = select :stay, :number_of_adults, 1..5
+    = field_set_tag "", :class => 'rooms' do
+      = label_tag :quantity, "Nombre d'enfants :"
+      = select :stay, :number_of_children, 0..5
+    = submit_tag "Réserver"
+    %div
+      = link_to "Retour à l'accueil", root_path
 %div{:id => "room_#{@room.id}", :class => "room"}
   = @room.name
   = @room.description
@@ -6,3 +27,9 @@
   = @room.sleeping
   = image_tag @room.image.url, :size => "150x150"
   = link_to "Retour", rooms_path
+#footer
+  &copy; Résidence Goldwyn 2012, Cannes (croisettes) | SCI | contact: +33 280 78 09 67
+  |
+  = link_to "Conditions générales de ventes", '/cgv/index.html'
+  |
+  = link_to "Agence et professionnel", '/pro/index.html'
