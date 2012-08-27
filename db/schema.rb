@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825100455) do
+ActiveRecord::Schema.define(:version => 20120826183954) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,17 +47,20 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "rooms", :force => true do |t|
-    t.string   "name",                                     :null => false
+    t.string   "name"
     t.text     "description"
     t.string   "dimension"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.string   "status",          :default => "avalaible"
-    t.integer  "number_of_rooms", :default => 1
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.string   "status",             :default => "avalaible"
+    t.integer  "number_of_rooms",    :default => 1
     t.string   "sleeping"
-    t.string   "image_url"
     t.integer  "day_price"
     t.integer  "week_price"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "rooms_stays", :id => false, :force => true do |t|
@@ -78,9 +81,9 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "stays", :force => true do |t|
-    t.datetime "arrival_date",                          :null => false
+    t.datetime "arrival_date"
     t.datetime "departure_date"
-    t.integer  "user_id",                               :null => false
+    t.integer  "user_id"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.boolean  "paid",               :default => false
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
     t.string   "last_name"
     t.text     "address"
     t.string   "phone"
+    t.boolean  "is_agency"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
