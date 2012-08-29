@@ -17,13 +17,15 @@
         %span Résidence Goldwyn
 
     #initform
+      - arrival_date= @stay.nil? ? "" : "#{@stay.arrival_date.day}/#{@stay.arrival_date.month}/#{@stay.arrival_date.year}"
+      - departure_date= @stay.nil? ? "" : "#{@stay.departure_date.day}/#{@stay.departure_date.month}/#{@stay.departure_date.year}"
       =form_tag "/stays", :method => "post" do 
-        = field_set_tag "", :class => 'arrival_date' do
+        = field_set_tag "", :class => 'arrival_date',  do
           = label_tag :arrival_date, "Date d'arrivée :"
-          = text_field :stay, :arrival_date
+          = text_field :stay, :arrival_date, :value => arrival_date
         = field_set_tag "", :class => 'departure_date' do
           = label_tag :departure_date, "Date de départ :"
-          = text_field :stay, :departure_date    
+          = text_field :stay, :departure_date, :value => departure_date   
         = field_set_tag "", :class => 'people' do
           = label_tag :quantity, "Nombre d'adultes :"
           = select :stay, :number_of_adults, 1..5
@@ -42,4 +44,4 @@
       |
       = link_to "Conditions générales de ventes", cgv_path
       |
-      = link_to "Agence et professionnel", pro_path      
+      = link_to "Agences et professionnels", pro_path      

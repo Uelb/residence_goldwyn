@@ -2,11 +2,16 @@
 class StaysController < ApplicationController  
   
   def new
+    @stay= Stay.find session[:stay_id] unless session[:stay_id].nil?
     @available_rooms= Room.avalaible
   end        
   
   def create
-    @stay= Stay.new
+    if session[:stay_id].nil?
+      @stay= Stay.new
+    else
+      @stay = Stay.find session[:stay_id].to_i
+    end
     @stay.arrival_date= DateTime.parse params[:stay][:arrival_date]+" 05:00:00 +1"
     @stay.departure_date= DateTime.parse params[:stay][:departure_date]+" 05:00:00 +1"
     @stay.number_of_adults= params[:stay][:number_of_adults]
@@ -15,7 +20,7 @@ class StaysController < ApplicationController
       session[:stay_id]= @stay.id 
       redirect_to rooms_path
     else
-      redirect_to new_stay_path, :notice => "Il semblerait qu'une erreur se soit produite"
+      redirect_to root_path, :notice => "Il semblerait qu'une erreur se soit produite"
     end
   end
   
