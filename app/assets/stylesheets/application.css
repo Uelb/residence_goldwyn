@@ -49,3 +49,9 @@ input[type=submit]{
 input[type=submit]:hover{
 	background: #ff9000;
 }
+.price{color:#333; font:bold 18px Arial, Helvetica, Tahoma; margin-bottom:5px;}
+.price .labelPrice{
+	font-size: 14px;
+	font-weight: normal;
+	color:#000;
+}

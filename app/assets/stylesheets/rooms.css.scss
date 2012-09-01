@@ -47,6 +47,12 @@ fieldset{display:inline; border:0 none;margin-right:15px;margin-bottom:10px;}
 	height:20px;
 	line-height: 20px;
 }
+#initform input[type="submit"]{
+	background:#ccc;
+}
+#initform input[type="submit"]:hover{
+	background: #FFAE00;
+}
 #footer{
 	position: relative;
 	bottom: 0;
