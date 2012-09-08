@@ -1,4 +1,5 @@
 #encoding: utf-8
+
 class StaysController < ApplicationController  
   
   def new
@@ -30,7 +31,9 @@ class StaysController < ApplicationController
     @rooms= Room.where(id: rooms_id.map { |key,value| key.to_i})
     if @rooms.empty?
       redirect_to rooms_path, :alert => "Vous n'avez pas choisi de chambre" and return
-    end
+    # elsif @rooms.map(&:capacity)reject(&:nil?).sum < (@stay.number_of_children + @stay.number_of_adults)
+    #   redirect_to rooms_path, :alert => "Vous avez choisi des chambres offrant une capacité de #{@rooms.map(&:capacity).sum}, cependant vous avez indiqué #{@stay.number_of_children + @stay.number_of_adults} personnes pour ce séjour." and return
+    end 
     @stay.rooms += @rooms
     redirect_to before_payment_path
   end
