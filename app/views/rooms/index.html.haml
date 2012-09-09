@@ -27,9 +27,9 @@
                 = check_box :room, room.id
             .clear
       = submit_tag "Valider votre réservation"
-  %h2 Réservé ou occupé
-  #reserved
-    - unless @reserved.nil?
+  - unless @reserved.nil?||@reserved.empty?
+    %h2 Réservé ou occupé
+    #reserved
       - @reserved.each do |room|
         = image_tag room.image.url, :size => "150x150"
         = room.name

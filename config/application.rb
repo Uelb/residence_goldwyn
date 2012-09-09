@@ -60,5 +60,7 @@ module ResidenceGoldwyn
     config.assets.version = '1.0'   
     
     config.assets.initialize_on_precompile = false
+    Encoding.default_external = Encoding::UTF_8
+    Encoding.default_internal = Encoding::UTF_8
   end
 end

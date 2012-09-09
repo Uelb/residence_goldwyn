@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904131227) do
+ActiveRecord::Schema.define(:version => 20120909004940) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,14 +46,25 @@ ActiveRecord::Schema.define(:version => 20120904131227) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "agencies", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "client_first_name"
+    t.string   "clien_last_name"
+    t.string   "email"
+    t.string   "tva_number"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "rooms", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "dimension"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
-    t.string   "status",             :default => "avalaible"
-    t.integer  "number_of_rooms",    :default => 1
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "status",               :default => "avalaible"
+    t.integer  "number_of_rooms",      :default => 1
     t.string   "sleeping"
     t.integer  "day_price"
     t.integer  "week_price"
@@ -60,10 +72,23 @@ ActiveRecord::Schema.define(:version => 20120904131227) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-<<<<<<< HEAD
-=======
     t.integer  "capacity"
->>>>>>> users/thomas/develop
+    t.string   "image_2_file_name"
+    t.string   "image_2_content_type"
+    t.integer  "image_2_file_size"
+    t.datetime "image_2_updated_at"
+    t.string   "image_3_file_name"
+    t.string   "image_3_content_type"
+    t.integer  "image_3_file_size"
+    t.datetime "image_3_updated_at"
+    t.string   "image_4_file_name"
+    t.string   "image_4_content_type"
+    t.integer  "image_4_file_size"
+    t.datetime "image_4_updated_at"
+    t.string   "image_5_file_name"
+    t.string   "image_5_content_type"
+    t.integer  "image_5_file_size"
+    t.datetime "image_5_updated_at"
   end
 
   create_table "rooms_stays", :id => false, :force => true do |t|

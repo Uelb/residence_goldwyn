@@ -1,0 +1,15 @@
+fr:
+  activerecord:
+    models:
+      user: "Utilisateur"
+    attributes:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        address: "Adresse"
+        phone: "Téléphone"
+        password: "Mot de passe"
+    errors:
+      models:
+        user:
+          blank: " : Le champ n'a pas correctement été rempli"

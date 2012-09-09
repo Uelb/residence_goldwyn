@@ -35,7 +35,19 @@ show do |room|
 		row :day_price
 		row :week_price
 		row :image do
-      image_tag(room.image.url(:thumb), :height => '100')
+	    image_tag(room.image.url(:thumb), :height => '100')
+	  end
+	  row :image_2 do
+	    image_tag(room.image_2.url(:thumb), :height => '100')
+	  end
+	  row :image_3 do
+	    image_tag(room.image_3.url(:thumb), :height => '100')
+	  end
+	  row :image_4 do
+	    image_tag(room.image_4.url(:thumb), :height => '100')
+	  end
+	  row :image_5 do
+	    image_tag(room.image_5.url(:thumb), :height => '100')
     end
 	end
 	active_admin_comments
@@ -51,6 +63,10 @@ form do |f|
     f.input :day_price
     f.input :week_price
     f.input :image
+    f.input :image_2
+    f.input :image_3
+    f.input :image_4
+    f.input :image_5
   end
   f.buttons
 end

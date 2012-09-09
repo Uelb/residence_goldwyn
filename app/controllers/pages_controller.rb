@@ -1,6 +1,8 @@
 #encoding: utf-8
 class PagesController < ApplicationController
   
+  before_filter :find_stay
+
   def summary
     @rooms= Stay.where(id: session[:stay_id].to_i).includes(:rooms).first.rooms
     if @rooms.empty?
@@ -13,7 +15,7 @@ class PagesController < ApplicationController
   end
   
   def before_payment
-    
+
   end
   
   def agency_reservation
@@ -26,5 +28,13 @@ class PagesController < ApplicationController
   
   def pro
     
+  end
+
+  private
+  
+  def find_stay
+    if session[:stay_id].present?
+      @stay= Stay.find session[:stay_id]
+    end
   end
 end
