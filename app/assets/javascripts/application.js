@@ -21,8 +21,6 @@ $(function() {
 
     tmp_date= new Date();
     initialMinDate= 6 - tmp_date.getDay();
-    if(initialMinDate == 0)
-      initialMinDate= 7
     var selectCurrentWeek = function() {
         window.setTimeout(function () {
             $('#week-picker').find('.ui-datepicker-current-day a').addClass('ui-state-active')
@@ -38,8 +36,14 @@ $(function() {
         firstDay:6,
         onSelect: function(dateText, inst) { 
             var date = $(this).datepicker('getDate');
-            startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() - 1);
-            endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 5);
+            if(date.getDay() == 6){
+                startDate= new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                endDate= new Date(date.getFullYear(), date.getMonth(), date.getDate() + 6);
+            }
+            else{
+                startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() - 1);
+                endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 5);
+            }
             var dateFormat = inst.settings.dateFormat || $.datepicker._defaults.dateFormat;
             $('#stay_arrival_date').val($.datepicker.formatDate( dateFormat, startDate, inst.settings ));
             $('#stay_departure_date').val($.datepicker.formatDate( dateFormat, endDate, inst.settings ));

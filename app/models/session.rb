@@ -10,9 +10,13 @@ class Session < ActiveRecord::Base
   end
   
   def check_if_stay_paid
-    s= Stay.find self[:stay_id]
-    if !s.paid? && agency_id.nil?
-      s.destroy
+    if self[:stay_id].nil?
+      return true
+    else
+      s= Stay.find self[:stay_id]
+      if !s.paid? && agency_id.nil?
+        s.destroy
+      end
     end
   end
 end
