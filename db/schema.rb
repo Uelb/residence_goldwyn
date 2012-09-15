@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909004940) do
+ActiveRecord::Schema.define(:version => 20120915064611) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,11 +50,11 @@ ActiveRecord::Schema.define(:version => 20120909004940) do
     t.string   "name"
     t.string   "password"
     t.string   "client_first_name"
-    t.string   "clien_last_name"
     t.string   "email"
     t.string   "tva_number"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "client_last_name"
   end
 
   create_table "rooms", :force => true do |t|
@@ -117,6 +117,17 @@ ActiveRecord::Schema.define(:version => 20120909004940) do
     t.boolean  "paid",               :default => false
     t.integer  "number_of_adults",                      :null => false
     t.integer  "number_of_children", :default => 0
+    t.integer  "agency_id"
+  end
+
+  create_table "supersized_images", :force => true do |t|
+    t.boolean  "visible",            :default => true
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "users", :force => true do |t|

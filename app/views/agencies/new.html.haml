@@ -1,0 +1,26 @@
+
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+=form_tag agencies_path, :method => "post" do
+  = label_tag :name, "Nom de l'agence : " 
+  = text_field :agency, :name
+  = label_tag :client_first_name, "Prénom du client : " 
+  = text_field :agency, :client_first_name
+  = label_tag :client_last_name, "Nom du client : "
+  = text_field :agency, :client_last_name
+  = label_tag :password, "Mot de passe : "
+  = password_field :agency, :password
+  = label_tag :email, "email : "
+  = email_field :agency, :email
+  = submit_tag

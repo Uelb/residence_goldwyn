@@ -19,13 +19,16 @@
     #initform
       - arrival_date= @stay.nil? ? "" : "#{@stay.arrival_date.day}/#{@stay.arrival_date.month}/#{@stay.arrival_date.year}"
       - departure_date= @stay.nil? ? "" : "#{@stay.departure_date.day}/#{@stay.departure_date.month}/#{@stay.departure_date.year}"
+      #week-picker
       =form_tag "/stays", :method => "post" do 
         = field_set_tag "", :class => 'arrival_date',  do
           = label_tag :arrival_date, "Date d'arrivée :"
-          = text_field :stay, :arrival_date, :value => arrival_date
+          = text_field_tag :fake_arrival_date, arrival_date, :disabled => "disabled"
+          = hidden_field :stay, :arrival_date, :value => arrival_date
         = field_set_tag "", :class => 'departure_date' do
           = label_tag :departure_date, "Date de départ :"
-          = text_field :stay, :departure_date, :value => departure_date   
+          = text_field_tag :fake_departure_date, departure_date, :disabled => "disabled"
+          = hidden_field :stay, :departure_date, :value => departure_date
         = field_set_tag "", :class => 'people' do
           = label_tag :quantity, "Nombre d'adultes :"
           = select :stay, :number_of_adults, 1..5

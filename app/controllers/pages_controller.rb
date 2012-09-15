@@ -27,7 +27,9 @@ class PagesController < ApplicationController
   end
   
   def pro
-    
+    if session[:agency_id].nil?
+      redirect_to root_path, :notice => "Une erreur s'est produite"
+    end
   end
 
   private

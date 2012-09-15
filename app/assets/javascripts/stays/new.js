@@ -1,5 +1,4 @@
     jQuery(function($){
-        
         $.supersized({
         
           // Functionality
@@ -9,14 +8,7 @@
                                  
           // Components             
           slide_links       : 'blank',  // Individual links for each slide (Options: false, 'num', 'name', 'blank')
-          slides          :   [     // Slideshow Images
-                            {image : 'http://1.bp.blogspot.com/-BJNnMxoxkMs/TqOkxBgIX6I/AAAAAAAAA84/6yQhOGGmYMU/s1600/340945_10150301735356843_108412031842_8427553_1791147376_o.jpg', title : '#', url : 'http://www.google.fr/'},
-                            {image : 'http://fr.prestige-mls.com/modules/documents/biens/5346/photos/40783.jpg', title : 'Oxynum', url : 'http://www.oxynum.fr/'},
-                            {image : 'http://1.bp.blogspot.com/-BJNnMxoxkMs/TqOkxBgIX6I/AAAAAAAAA84/6yQhOGGmYMU/s1600/340945_10150301735356843_108412031842_8427553_1791147376_o.jpg', title : '#', url : 'http://www.google.fr/'},
-                            {image : 'http://fr.prestige-mls.com/modules/documents/biens/5346/photos/40783.jpg', title : 'Oxynum', url : 'http://www.oxynum.fr/'},
-                            {image : 'http://1.bp.blogspot.com/-BJNnMxoxkMs/TqOkxBgIX6I/AAAAAAAAA84/6yQhOGGmYMU/s1600/340945_10150301735356843_108412031842_8427553_1791147376_o.jpg', title : '#', url : 'http://www.google.fr/'},
-                            {image : 'http://fr.prestige-mls.com/modules/documents/biens/5346/photos/40783.jpg', title : 'Oxynum', url : 'http://www.oxynum.fr/'}
-                        ]
+          slides          :   images_to_display
           
         });
         });

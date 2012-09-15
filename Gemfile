@@ -23,6 +23,7 @@ gem 'execjs'
 gem 'coffee-script'
 gem 'coffee-filter'
 gem 'clockwork'
+gem 'rails-i18n'
 
 #############################################################
 #	Persistence

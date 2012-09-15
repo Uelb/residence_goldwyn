@@ -1,3 +1,4 @@
 class Agency < ActiveRecord::Base
-  attr_accessible :clien_last_name, :client_first_name, :email, :name, :password, :tva_number
+  attr_accessible :client_last_name, :client_first_name, :email, :name, :password, :tva_number
+  has_many :stays
 end

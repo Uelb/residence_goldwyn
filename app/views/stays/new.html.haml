@@ -11,5 +11,13 @@
     Un espace de prestige situé dans les quartiers résidentielle de la Croisette, Côte d'azur. Une prestation adapté à vos besoins, business, séjour, etc...
     = link_to "Découvrir la Résidence", 'http://www.google.fr', :class => 'linkedin'
 
+
+:javascript
+  var images_to_display= "#{@images_to_display.map(&:to_s).join(',')}";
+  images_to_display= images_to_display.split(",");
+  images_to_display= images_to_display.map(function(url){
+    return {image : url, title: "Oxynum", url: "http://www.oxynum.fr"};
+  });
+
 //%a#prevslide.load-item
 //%a#nextslide.load-item
