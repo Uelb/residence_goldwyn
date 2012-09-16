@@ -11,7 +11,7 @@ class Stay < ActiveRecord::Base
   before_destroy :turn_rooms_to_avalaible
   
   def verify_dates
-    if (self.departure_date != nil && self.departure_date < self.arrival_date) || self.number_of_adults < 1
+    if (self.departure_date != nil && self.departure_date < self.arrival_date) || self.number_of_adults < 1 || self.arrival_date <= Time.now
       return false
     end
   end

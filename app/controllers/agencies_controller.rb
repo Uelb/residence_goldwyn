@@ -1,25 +1,30 @@
-#encoding: utf-8
-
 class AgenciesController < ApplicationController
 
 	def new
 		@stay= Stay.find session[:stay_id]
+		@agency= Agency.new
+	end
+
+	def sign_in
+		@stay= Stay.find session[:stay_id]
+	end
+
+	def connect
+		@stay= Stay.find session[:stay_id]
+		@agency= Agency.where(params[:agency]).first
+		if @agency.nil?
+			redirect_to agencies_sign_in_path, :notice => "Identifiants incorrects" and return
+		end
+		@agency.stay += @stay
+		render :summary
+	end
+
+	def summary
+		@stay= Stay.find session[:stay_id]
 	end
 
 	def create
-		@stay= Stay.find session[:stay_id]
-		email= params[:agency][:email]
-		agency_hash= params[:agency]
-		agency_hash.delete_if do |key,value|
-			key == "email"
-		end
-		agency= Agency.where(agency_hash).first
-		if agency.nil?
-			redirect_to new_agency_path, :notice => "Une erreur s'est produite. Veuillez vérifier vos identifiants" and return
-		else
-			agency.update_attribute("email", email)
-			@stay.update_attribute("agency_id", agency.id)
-			redirect_to pro_path
-		end
+		@agency= Agency.create(params[:agency])
+		@agency.update_attribute("country", params[:country])
 	end
 end

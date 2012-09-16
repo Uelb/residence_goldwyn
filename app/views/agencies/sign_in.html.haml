@@ -1,6 +1,21 @@
 
-=form_tag "/", :method => "post" do
-  = label_tag :name, "Nom de l'agence" 
-  = text_field :agency, :name
-  = label_tag :name, "Nom de l'agence" 
-  = text_field :agency, :name
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+=form_tag agencies_connect_path, :method => "post" do
+  = text_field :agency, :id, :placeholder => "Id de l'agence"
+  = text_field :agency, :name, :placeholder => "Nom de l'agence"
+  = telephone_field :agency, :phone, :placeholder => "Téléphone de l'agence"
+  = submit_tag
+
+= link_to "Vous voulez obtenir un compte agence", new_agency_path
