@@ -24,6 +24,7 @@ gem 'coffee-script'
 gem 'coffee-filter'
 gem 'clockwork'
 gem 'rails-i18n'
+gem 'therubyracer'
 
 #############################################################
 #	Persistence
