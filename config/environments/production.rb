@@ -66,4 +66,9 @@ ResidenceGoldwyn::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.domain_name= 'http://www.residencegoldwyn.fr'
+  ActionMailer::Base.smtp_settings = {
+  :address => 'localhost',
+  :domain => 'www.residencegoldwyn.fr',
+  :port => 25
+}
 end
