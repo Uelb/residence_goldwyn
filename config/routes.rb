@@ -13,6 +13,7 @@ ResidenceGoldwyn::Application.routes.draw do
   match 'agencies/sign_in' => "agencies#sign_in", :via => :get
   match 'agencies/connect' => "agencies#connect", :via => :post
   match 'agencies/summary' => "agencies#summary", :via => :get
+  match 'agencies/confirmation' => "agencies#confirmation", :via => :get
 
   get 'payment' => "pages#payment", :as => 'payment'
   get 'before_payment' => "pages#before_payment", :as => "before_payment"

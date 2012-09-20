@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class AgenciesController < ApplicationController
 
 	def new
@@ -24,7 +26,18 @@ class AgenciesController < ApplicationController
 	end
 
 	def create
+		@stay= Stay.find session[:stay_id]
 		@agency= Agency.create(params[:agency])
 		@agency.update_attribute("country", params[:country])
+		render :summary
+	end
+
+	def confirmation
+		@stay= Stay.where(id: session[:stay_id]).first
+		@agency= Agency.where(id: @stay.agency_id).first
+		if @stay.nil? || @agency.nil?
+			redirect_to agencies_sign_in_path, :notice => "Une erreur s'est produite, veuillez réessayer" and return
+		end
+		
 	end
 end
