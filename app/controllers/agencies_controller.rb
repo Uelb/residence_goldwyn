@@ -17,7 +17,7 @@ class AgenciesController < ApplicationController
 		if @agency.nil?
 			redirect_to agencies_sign_in_path, :notice => "Identifiants incorrects" and return
 		end
-		@agency.stay += @stay
+		@agency.stays << @stay
 		render :summary
 	end
 
@@ -38,6 +38,5 @@ class AgenciesController < ApplicationController
 		if @stay.nil? || @agency.nil?
 			redirect_to agencies_sign_in_path, :notice => "Une erreur s'est produite, veuillez réessayer" and return
 		end
-		
 	end
 end
