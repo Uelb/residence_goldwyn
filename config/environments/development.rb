@@ -45,13 +45,6 @@ ResidenceGoldwyn::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.smtp_settings = {
-    :address => 'ks385986.kimsufi.com',
-    :domain => 'www.residencegoldwyn.fr',
-    :port => 25
-  }
-
 
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
