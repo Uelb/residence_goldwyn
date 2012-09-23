@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825100455) do
+ActiveRecord::Schema.define(:version => 20120916020529) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,18 +45,55 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "agencies", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "client_first_name"
+    t.string   "email"
+    t.string   "tva_number"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "client_last_name"
+    t.string   "address"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "mobile_phone"
+    t.string   "zip_code"
+    t.text     "commentary"
+  end
+
   create_table "rooms", :force => true do |t|
-    t.string   "name",                                     :null => false
+    t.string   "name"
     t.text     "description"
     t.string   "dimension"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.string   "status",          :default => "avalaible"
-    t.integer  "number_of_rooms", :default => 1
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "status",               :default => "avalaible"
+    t.integer  "number_of_rooms",      :default => 1
     t.string   "sleeping"
-    t.string   "image_url"
     t.integer  "day_price"
     t.integer  "week_price"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "capacity"
+    t.string   "image_2_file_name"
+    t.string   "image_2_content_type"
+    t.integer  "image_2_file_size"
+    t.datetime "image_2_updated_at"
+    t.string   "image_3_file_name"
+    t.string   "image_3_content_type"
+    t.integer  "image_3_file_size"
+    t.datetime "image_3_updated_at"
+    t.string   "image_4_file_name"
+    t.string   "image_4_content_type"
+    t.integer  "image_4_file_size"
+    t.datetime "image_4_updated_at"
+    t.string   "image_5_file_name"
+    t.string   "image_5_content_type"
+    t.integer  "image_5_file_size"
+    t.datetime "image_5_updated_at"
   end
 
   create_table "rooms_stays", :id => false, :force => true do |t|
@@ -78,14 +114,25 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "stays", :force => true do |t|
-    t.datetime "arrival_date",                          :null => false
+    t.datetime "arrival_date"
     t.datetime "departure_date"
-    t.integer  "user_id",                               :null => false
+    t.integer  "user_id"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.boolean  "paid",               :default => false
     t.integer  "number_of_adults",                      :null => false
     t.integer  "number_of_children", :default => 0
+    t.integer  "agency_id"
+  end
+
+  create_table "supersized_images", :force => true do |t|
+    t.boolean  "visible",            :default => true
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -105,6 +152,7 @@ ActiveRecord::Schema.define(:version => 20120825100455) do
     t.string   "last_name"
     t.text     "address"
     t.string   "phone"
+    t.boolean  "is_agency"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

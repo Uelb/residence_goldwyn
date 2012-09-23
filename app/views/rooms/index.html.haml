@@ -1,4 +1,13 @@
 -# encoding: utf-8
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
 .resa
   %h2 Chambre(s) disponible(s)
   #avalaible
@@ -28,7 +37,7 @@
                 %span.labelPrice €/jour
             .clear
       = submit_tag "Valider votre réservation"
-  - unless @reserved.nil?    
+  - unless @reserved.nil?||@reserved.empty?    
     %h2 Chambre(s) non disponible(s)
     #reserved
       - @reserved.each do |room|

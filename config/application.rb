@@ -31,7 +31,7 @@ module ResidenceGoldwyn
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :fr
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -60,5 +60,7 @@ module ResidenceGoldwyn
     config.assets.version = '1.0'   
     
     config.assets.initialize_on_precompile = false
+    Encoding.default_external = Encoding::UTF_8
+    Encoding.default_internal = Encoding::UTF_8
   end
 end
