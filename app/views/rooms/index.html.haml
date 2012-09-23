@@ -9,7 +9,7 @@
 %br
 %br
 .resa
-  %h2 Disponible
+  %h2 Chambre(s) disponible(s)
   #avalaible
     = form_tag edit_stay_path(@stay), :method => :get do
       = submit_tag "Valider votre réservation"
@@ -28,16 +28,17 @@
                 = room.number_of_rooms.to_s+" Pièce(s)"
               .sleep
                 = room.sleeping
-              = link_to("Voir les photos et détails", room_path(room))
+              = link_to("Plus de détails", room_path(room))
             .info
-              .price
-                = room.day_price.to_s+"€/jour"
               %span.check
                 = check_box :room, room.id
+              %span.price
+                = room.day_price.to_s
+                %span.labelPrice €/jour
             .clear
       = submit_tag "Valider votre réservation"
-  - unless @reserved.nil?||@reserved.empty?
-    %h2 Réservé ou occupé
+  - unless @reserved.nil?||@reserved.empty?    
+    %h2 Chambre(s) non disponible(s)
     #reserved
       - @reserved.each do |room|
         = image_tag room.image.url, :size => "150x150"
@@ -46,3 +47,9 @@
         = room.dimension
         = room.number_of_rooms.to_s
         = room.sleeping
+#footer
+  &copy; Résidence Goldwyn 2012, Cannes (croisettes) | SCI | contact: +33 280 78 09 67
+  |
+  = link_to "Conditions générales de ventes", cgv_path
+  |
+  = link_to "Agences et professionnels", '/pro/index.html' 
