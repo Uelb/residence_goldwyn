@@ -2,7 +2,7 @@ ResidenceGoldwyn::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  match "/:locale" => "stays#new"
+
 
   root :to => "stays#new"
 

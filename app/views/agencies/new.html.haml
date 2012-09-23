@@ -23,5 +23,5 @@
 	= label_tag :country, "Pays : "
 	= select_tag :country, options_for_select([['France', 'France'], ['Belgique', 'Belgique'], ['Corse', 'Corse'], ['Dom-Tom', 'Dom-Tom']])
 	= label_tag :commentary, "Commentaires : "
-	= text_area :agency, :commentary, ""
+	= text_area :agency, :commentary
 	= submit_tag "Demander un compte"

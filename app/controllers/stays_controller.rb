@@ -1,5 +1,3 @@
-#encoding: utf-8
-
 class StaysController < ApplicationController  
   
   def new
