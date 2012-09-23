@@ -7,6 +7,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     = favicon_link_tag "favicon.ico"
+    - if I18n.locale == :en
+      = javascript_include_tag "language_choice/jquery.ui.datepicker-en"
+    - else
+      = javascript_include_tag "language_choice/jquery.ui.datepicker-fr"
+
+    = javascript_include_tag "datepicker"
     = yield :head
   %body
     - if notice || alert
@@ -22,18 +28,18 @@
       #week-picker
       =form_tag "/stays", :method => "post" do 
         = field_set_tag "", :class => 'arrival_date',  do
-          = label_tag :arrival_date, "Date d'arrivée :"
+          = label_tag :arrival_date, t(:arrival_date)
           = text_field_tag :fake_arrival_date, arrival_date, :disabled => "disabled"
           = hidden_field :stay, :arrival_date, :value => arrival_date
         = field_set_tag "", :class => 'departure_date' do
-          = label_tag :departure_date, "Date de départ :"
+          = label_tag :departure_date, t(:departure_date)
           = text_field_tag :fake_departure_date, departure_date, :disabled => "disabled"
           = hidden_field :stay, :departure_date, :value => departure_date
         = field_set_tag "", :class => 'people' do
-          = label_tag :quantity, "Nombre d'adultes :"
+          = label_tag :quantity, t(:number_of_adults)
           = select :stay, :number_of_adults, 1..5
         = field_set_tag "", :class => 'rooms' do
-          = label_tag :quantity, "Nombre d'enfants :"
+          = label_tag :quantity, t(:number_of_children)
           = select :stay, :number_of_children, 0..5
         = submit_tag "Réserver"
         %div
@@ -47,4 +53,4 @@
       |
       = link_to "Conditions générales de ventes", cgv_path
       |
-      = link_to "Agences et professionnels", pro_path      
+      = link_to "Agences et professionnels", pro_path   

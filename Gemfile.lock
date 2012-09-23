@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/iain/http_accept_language.git
+  revision: 7738e45ba154015597fca749b7d0257861c14a02
+  specs:
+    http_accept_language (2.0.0.pre)
+
 GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
@@ -109,7 +115,6 @@ GEM
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.1)
-    http_accept_language (1.0.2)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
@@ -300,7 +305,7 @@ DEPENDENCIES
   guard
   guard-rspec
   haml-rails
-  http_accept_language
+  http_accept_language!
   httparty
   jquery-rails (= 1.0.16)
   jquery_mobile-rails

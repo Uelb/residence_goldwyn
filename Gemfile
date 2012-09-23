@@ -25,7 +25,7 @@ gem 'coffee-filter'
 gem 'clockwork'
 gem 'rails-i18n'
 gem 'therubyracer'
-gem 'http_accept_language'
+gem 'http_accept_language', :git => "git://github.com/iain/http_accept_language.git"
 
 #############################################################
 #	Persistence

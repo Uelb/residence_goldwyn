@@ -13,3 +13,7 @@ fr:
       models:
         user:
           blank: " : Le champ n'a pas correctement été rempli"
+  arrival_date: "Date d'arrivée : "
+  departure_date: "Date de départ : "
+  number_of_adults: "Nombre d'adultes : "
+  number_of_children: "Nombres d'enfants : "

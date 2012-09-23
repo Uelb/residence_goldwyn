@@ -3,8 +3,8 @@ ResidenceGoldwyn::Application.routes.draw do
   ActiveAdmin.routes(self)
 
 
-
   root :to => "stays#new"
+  match '/:locale' => "stays#new", :locale => /en|fr/
 
   scope "(:locale)", :locale => /en|fr/ do
     resources :stays, :only => [:index, :new, :create, :edit]
