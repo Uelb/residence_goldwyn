@@ -25,6 +25,7 @@ gem 'coffee-filter'
 gem 'clockwork'
 gem 'rails-i18n'
 gem 'therubyracer'
+gem 'http_accept_language'
 
 #############################################################
 #	Persistence
@@ -57,7 +58,7 @@ gem 'meta_search', '>= 1.1.3'
 #	Payments & transactions
 #############################################################
 
-gem 'iban-tools'
+#gem 'iban-tools'
 
 #############################################################
 #	Configuration
@@ -72,7 +73,7 @@ gem 'rails_config'
 gem 'rake'
 #gem 'nokogiri'
 gem 'mail'
-gem 'sendgrid'
+#gem 'sendgrid'
 gem 'httparty'
 gem 'sitemap_generator'
 

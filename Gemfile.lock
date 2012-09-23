@@ -109,12 +109,12 @@ GEM
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.1)
+    http_accept_language (1.0.2)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
     httpclient (2.2.5)
     i18n (0.6.0)
-    iban-tools (0.0.8)
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6)
@@ -241,9 +241,6 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    sendgrid (1.0.1)
-      json
-      json
     silent-postgres (0.1.1)
     simplecov (0.6.4)
       multi_json (~> 1.0)
@@ -303,8 +300,8 @@ DEPENDENCIES
   guard
   guard-rspec
   haml-rails
+  http_accept_language
   httparty
-  iban-tools
   jquery-rails (= 1.0.16)
   jquery_mobile-rails
   mail
@@ -324,7 +321,6 @@ DEPENDENCIES
   rspec-rails (~> 2.10.0)
   ruby-debug19
   sass-rails (~> 3.2.3)
-  sendgrid
   silent-postgres
   simplecov
   sitemap_generator

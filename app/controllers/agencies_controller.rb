@@ -38,5 +38,6 @@ class AgenciesController < ApplicationController
 		if @stay.nil? || @agency.nil?
 			redirect_to agencies_sign_in_path, :notice => "Une erreur s'est produite, veuillez réessayer" and return
 		end
+		AgencyMailer.reservation_confirmation(@agency).deliver
 	end
 end
