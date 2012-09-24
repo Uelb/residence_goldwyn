@@ -41,16 +41,16 @@
         = field_set_tag "", :class => 'rooms' do
           = label_tag :quantity, t(:number_of_children)
           = select :stay, :number_of_children, 0..5
-        = submit_tag "Réserver"
+        = submit_tag t(:reservation)
         %div
-          = link_to "Retour à l'accueil", root_path
+          = link_to t(:back_to_homepage), root_path
 
 
     = yield
 
     #footer
-      © Résidence Goldwyn 2012, Cannes (croisettes) | SCI | contact: +33 280 78 09 67
+      © Résidence Goldwyn 2012, Cannes (croisettes) | SCI | Contact: +33 280 78 09 67
       |
-      = link_to "Conditions générales de ventes", cgv_path
+      = link_to t(:cgv), cgv_path
       |
-      = link_to "Agences et professionnels", pro_path   
+      = link_to t(:agencies_and_pros), pro_path   

@@ -4,12 +4,13 @@
   = javascript_include_tag 'stays/new'
   
 #textHome
-  = link_to image_tag( 'image-1.png'), 'http://www.google.fr', :class => 'vignette'
+  = link_to image_tag( 'image-1.png'), 'http://www.residencegoldwyn.fr', :class => 'vignette'
   %h1.residence
     Résidence Goldwyn
   %p.intro 
-    Un espace de prestige situé dans les quartiers résidentielle de la Croisette, Côte d'azur. Une prestation adapté à vos besoins, business, séjour, etc...
-    = link_to "Découvrir la Résidence", 'http://www.google.fr', :class => 'linkedin'
+    = t(:intro)
+    %br
+    = link_to t(:discover_residence), 'http://www.residencegoldwyn.fr', :class => 'linkedin'
 
 
 :javascript
