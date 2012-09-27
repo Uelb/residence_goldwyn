@@ -4,7 +4,9 @@ class PagesController < ApplicationController
   before_filter :find_stay
 
   def summary
-    @rooms= Stay.where(id: session[:stay_id].to_i).includes(:rooms).first.rooms
+    @stay= Stay.where(id: session[:stay_id].to_i).includes(:rooms).first
+    @rooms= @stay.rooms
+    @stay.user= current_user
     if @rooms.empty?
       redirect_to rooms_path, :alert => "Vous n'avez pas sélectionné de chambres"
     end
