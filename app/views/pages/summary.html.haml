@@ -12,7 +12,7 @@
 	=hidden_field_tag "ownertown", ""
 	=hidden_field_tag "ownertelno", "#{@stay.user.try(:phone)}"
 
-	=hidden_field_tag "SHASign", Digest::SHA1.hexdigest("cerisepommefraise23")
+	=hidden_field_tag "SHASign", "cerisepommefraise23"
 
 	=hidden_field_tag "TITLE", "Paiement de votre séjour chez Résidence Goldwyn"
 	=hidden_field_tag "BGCOLOR", ""
