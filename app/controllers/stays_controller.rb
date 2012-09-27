@@ -22,7 +22,7 @@ class StaysController < ApplicationController
       session[:stay_id]= @stay.id 
       redirect_to rooms_path
     else
-      redirect_to root_path, :notice => "Il semblerait qu'une erreur se soit produite"
+      redirect_to root_path, :notice => t(:reservation_error)
     end
   end
   

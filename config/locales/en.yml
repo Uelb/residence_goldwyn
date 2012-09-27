@@ -23,3 +23,7 @@ en:
   discover_residence: "Discover the residence"
   intro: "A beautiful place located in the residential area of La Croisette, Côtes d'Azur."
   reservation: "???"
+  reservation_error: "Sorry, an error occured, please try again."
+  day: "day"
+  details: "Details"
+  avalaible_rooms: "Avalaible rooms"

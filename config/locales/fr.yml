@@ -23,3 +23,7 @@ fr:
   discover_residence: "Découvrir la Résidence"
   intro: "Un espace de prestige situé dans les quartiers résidentielle de la Croisette, Côte d'azur. Une prestation adapté à vos besoins, business, séjour, etc..."
   reservation: "Réserver"
+  reservation_error: "Il semblerait qu'une erreur se soit produite"
+  day: "jour"
+  details: "Plus de détails"
+  avalaible_rooms: "Chambre(s) disponible(s)"

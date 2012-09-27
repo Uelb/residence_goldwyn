@@ -9,7 +9,7 @@
 %br
 %br
 .resa
-  %h2 Chambre(s) disponible(s)
+  %h2= t(:avalaible_rooms)
   #avalaible
     = form_tag edit_stay_path(@stay), :method => :get do
       = submit_tag "Valider votre réservation"
@@ -28,13 +28,14 @@
                 = room.number_of_rooms.to_s+" Pièce(s)"
               .sleep
                 = room.sleeping
-              = link_to("Plus de détails", room_path(room))
+              = link_to(t(:details), room_path(room))
             .info
               %span.check
                 = check_box :room, room.id
               %span.price
                 = room.day_price.to_s
-                %span.labelPrice €/jour
+                %span.labelPrice
+                  = "€/"+t(:day)
             .clear
       = submit_tag "Valider votre réservation"
   - unless @reserved.nil?||@reserved.empty?    
@@ -47,4 +48,3 @@
         = room.dimension
         = room.number_of_rooms.to_s
         = room.sleeping
-
