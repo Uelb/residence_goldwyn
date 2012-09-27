@@ -21,6 +21,10 @@ ResidenceGoldwyn::Application.routes.draw do
     get 'cgv' => "pages#cgv", :as => "cgv"
     get 'pro' => "pages#pro", :as => "pro"
     get 'summary' => "pages#summary", :as => "summary"
+    get 'payment_cancel' => "pages#payment_cancel", :as => "payment_cancel"
+    get 'payment_warning' => "pages#payment_warning", :as => "payment_warning"
+    get 'payment_error' => "pages#payment_error", :as => "payment_error"
+    get 'confirmation' => "pages#confirmation", :as => "confirmation"
     devise_for :admin_users, ActiveAdmin::Devise.config   
     devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions" }
   end

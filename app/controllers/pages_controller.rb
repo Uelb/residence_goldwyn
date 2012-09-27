@@ -25,6 +25,20 @@ class PagesController < ApplicationController
   def cgv
       
   end
+
+  def confirmation
+    
+  end
+  def payment_warning
+    
+  end
+
+  def payment_error
+    
+  end
+  def payment_cancel
+    
+  end
   
   def pro
     if session[:agency_id].nil?

@@ -1,1 +1,30 @@
-= link_to "Payer", payment_path
+#form1= form_tag "https://secure.ogone.com/ncol/test/orderstandard.asp", :method => :post, :name => "form1" do
+	=hidden_field_tag "PSPID", "residencegoldwyn"
+	=hidden_field_tag "orderID", "#{@stay.id}"
+	=hidden_field_tag "amount", "#{@stay.rooms.map(&:week_price).sum}"
+	=hidden_field_tag "currency", "EUR"
+	=hidden_field_tag "language", "fr_FR"
+	=hidden_field_tag "CN", "#{@stay.user.name}"
+	=hidden_field_tag "EMAIL", "#{@stay.user.email}"
+	=hidden_field_tag "ownerZIP", "#{@stay.user.zip_code}"
+	=hidden_field_tag "owneraddress", "#{@stay.user.address}"
+	=hidden_field_tag "ownercty", ""
+	=hidden_field_tag "ownertown", ""
+	=hidden_field_tag "ownertelno", "#{@stay.user.phone}"
+
+	=hidden_field_tag "SHASign", Digest::SHA1.hexdigest "cerisepommefraise23"
+
+	=hidden_field_tag "TITLE", "Paiement de votre séjour chez Résidence Goldwyn"
+	=hidden_field_tag "BGCOLOR", ""
+	=hidden_field_tag "TXTCOLOR", ""
+	=hidden_field_tag "TBLBGCOLOR", ""
+	=hidden_field_tag "TBLTXTCOLOR", ""
+	=hidden_field_tag "BUTTONBGCOLOR", ""
+	=hidden_field_tag "BUTTONTXTCOLOR", ""
+	=hidden_field_tag "LOGO", "http://www.residencegoldwyn.fr/assets/logo-goldwyn.png"
+	=hidden_field_tag "FONTTYPE", ""
+
+	=hidden_field_tag "accepturl", "http://www.residencegoldwyn.fr/confirmation"
+	=hidden_field_tag "declineurl", "http://www.residencegoldwyn.fr/payment_error"
+	=hidden_field_tag "exceptionurl", "http://www.residencegoldwyn.fr/payment_warning"
+	=hidden_field_tag "cancelurl", "http://www.residencegoldwyn.fr/payment_cancel"
