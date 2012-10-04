@@ -27,5 +27,9 @@ class Room < ActiveRecord::Base
     end
     return room_stays.map(&:departure_date).max < stay.arrival_date && room_stays.map(&:arrival_date).min > stay.departure_date
   end 
+
+  def book!
+    self.update_attribute("status", RESERVED_STATUS)
+  end
   
 end

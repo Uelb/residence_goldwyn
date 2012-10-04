@@ -30,6 +30,14 @@ class Stay < ActiveRecord::Base
   def paid?
     self.paid
   end
+
+  def pay!
+    self.update_attribute("paid", true)
+  end
+
+  def book!
+    self.rooms.map(&:book!)
+  end
   
   def turn_rooms_to_avalaible
     self.rooms.each do |room|

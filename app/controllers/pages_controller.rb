@@ -30,7 +30,9 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    
+    @stay= Stay.find session[:stay_id]
+    @stay.pay!
+
   end
   def payment_warning
     
