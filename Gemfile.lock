@@ -241,6 +241,8 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
+    rufus-scheduler (2.0.17)
+      tzinfo (>= 0.3.23)
     sass (3.1.20)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -325,6 +327,7 @@ DEPENDENCIES
   rspec-expectations (~> 2.10.0)
   rspec-rails (~> 2.10.0)
   ruby-debug19
+  rufus-scheduler
   sass-rails (~> 3.2.3)
   silent-postgres
   simplecov
