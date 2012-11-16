@@ -10,4 +10,11 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Votre réservation à Résidence Goldwyn a bien été prise en compte"
   end
 
+  def alert_for_virement(user, stay=nil)
+  	@user=user
+  	@stay= stay
+
+  	mail :to => user.email, :subject => "Virement RésidenceGoldwyn en attente"
+  end
+
 end

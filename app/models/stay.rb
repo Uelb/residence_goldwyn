@@ -9,6 +9,7 @@ class Stay < ActiveRecord::Base
   validates_presence_of :arrival_date, :number_of_adults
   before_save :verify_dates
   before_destroy :turn_rooms_to_avalaible
+  scope :waiting_for_transfer, where(:waiting_for_transfer => true)
   
   def verify_dates
     if (self.departure_date != nil && self.departure_date < self.arrival_date) || self.number_of_adults < 1 || self.arrival_date <= Time.now
@@ -44,5 +45,15 @@ class Stay < ActiveRecord::Base
       room.update_attribute("status",Room::AVALAIBLE_STATUS)
     end
   end
+
+  def wait_for_transfer
+    self.rooms.each(&:wait_for_transfer)
+    self.update_attribute("waiting_for_transfer",true)
+  end
+
+  def alert_user
+    self.user
+  end
+
   
 end

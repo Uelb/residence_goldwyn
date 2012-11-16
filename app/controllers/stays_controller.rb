@@ -44,4 +44,9 @@ class StaysController < ApplicationController
     @stay= Stay.find params[:id] 
   end
 
+  def waiting_for_transfer
+    @stay= Stay.find session[:stay_id]
+    @stay.wait_for_transfer
+  end
+
 end

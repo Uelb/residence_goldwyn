@@ -2,6 +2,10 @@ en:
   activerecord:
     models:
       user: "User"
+      admin_user: "Admin"
+      agency: "Agency"
+      room: "Room"
+      stay: "Stay"
     attributes:
       user:
         first_name: "First name"
@@ -9,6 +13,35 @@ en:
         address: "Address"
         phone: "Phone"
         password: "Password"
+      room:
+        name: "Name"
+        description: "Description"
+        dimension: "Dimension"
+        status: "Status"
+        number_of_rooms: "Number of rooms"
+        sleeping: "Sleeping"
+        day_price: "Day price"
+        week_price: "Week price"
+        capacity: "Capacity"
+      stay:
+        arrival_date: "Arrival Date"
+        departure_date: "Departure Date"
+        number_of_adults: "Number of Adults"
+        number_of_children: "Number of children"
+        waiting_for_transfer: "waiting for transfer"
+      agency:
+        name: "Name"
+        password: "Password"
+        client_first_name: "Client first name"
+        client_last_name: "Client last name"
+        email: "Email"
+        tva_number: "TVA number"
+        address: "Address"
+        country: "Country"
+        phone: "Phone"
+        mobile_phone: "Mobile phone"
+        zip_code: "Zip code"
+        commentary: "Commentary"
     errors:
       models:
         user:
@@ -22,8 +55,10 @@ en:
   back_to_homepage: "Back to Homepage"
   discover_residence: "Discover the residence"
   intro: "A beautiful place located in the residential area of La Croisette, Côtes d'Azur."
-  reservation: "???"
+  reservation: "Book"
   reservation_error: "Sorry, an error occured, please try again."
   day: "day"
   details: "Details"
   avalaible_rooms: "Avalaible rooms"
+  language_change: "Site en français"
+  confirmed_reservation: "Your reservation has correctly been considered. Please proceed to the transfer as soon as possible. You will receive a confirmation email after we receive your payment. Thank you very much for having chosen ResidenceGoldwyn"

@@ -54,3 +54,5 @@
       = link_to t(:cgv), cgv_path
       |
       = link_to t(:agencies_and_pros), pro_path   
+      |
+      =link_to t(:language_change), (I18n.locale == :en) ? url_for(:locale => :fr) : url_for(:locale => :en)

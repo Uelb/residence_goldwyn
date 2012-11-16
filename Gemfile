@@ -22,7 +22,6 @@ gem 'jquery_mobile-rails'
 gem 'execjs'
 gem 'coffee-script'
 gem 'coffee-filter'
-gem 'clockwork'
 gem 'rails-i18n'
 gem 'therubyracer'
 gem 'http_accept_language', :git => "git://github.com/iain/http_accept_language.git"
@@ -56,12 +55,6 @@ gem 'activeadmin', '~> 0.4.0'
 gem 'meta_search', '>= 1.1.3'
 
 #############################################################
-#	Payments & transactions
-#############################################################
-
-#gem 'iban-tools'
-
-#############################################################
 #	Configuration
 #############################################################
 
@@ -72,9 +65,7 @@ gem 'rails_config'
 #############################################################
 
 gem 'rake'
-#gem 'nokogiri'
 gem 'mail'
-#gem 'sendgrid'
 gem 'httparty'
 gem 'sitemap_generator'
 

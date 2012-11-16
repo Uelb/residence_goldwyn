@@ -11,6 +11,7 @@ ResidenceGoldwyn::Application.routes.draw do
     resources :rooms, :only => [:index,:show]
     resources :agencies, :only => [:new, :create]
 
+    match "stays/waiting_for_transfer" => "stays#waiting_for_transfer", :via => :get
     match 'agencies/sign_in' => "agencies#sign_in", :via => :get
     match 'agencies/connect' => "agencies#connect", :via => :post
     match 'agencies/summary' => "agencies#summary", :via => :get
@@ -25,8 +26,13 @@ ResidenceGoldwyn::Application.routes.draw do
     get 'payment_warning' => "pages#payment_warning", :as => "payment_warning"
     get 'payment_error' => "pages#payment_error", :as => "payment_error"
     get 'confirmation' => "pages#confirmation", :as => "confirmation"
+    get 'virement' => "pages#virement", :as => "virement"
     devise_for :admin_users, ActiveAdmin::Devise.config   
+
     devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions" }
+    as :user do
+      get "/login" => "pages#summary"
+    end
   end
 
 end

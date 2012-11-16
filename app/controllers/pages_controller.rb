@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def summary
     @stay= Stay.where(id: session[:stay_id].to_i).first
+    if @stay.nil? then redirect_to root_path and return end
     @rooms= @stay.rooms
     @stay.user= current_user
     @stay.save
@@ -48,6 +49,14 @@ class PagesController < ApplicationController
   def pro
     if session[:agency_id].nil?
       redirect_to root_path, :notice => "Une erreur s'est produite"
+    end
+  end
+
+  def virement
+    if session[:stay_id]
+      @stay= Stay.find session[:stay_id]
+    else
+      redirect_to root_path and return
     end
   end
 

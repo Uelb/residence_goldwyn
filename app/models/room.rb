@@ -2,10 +2,12 @@ class Room < ActiveRecord::Base
   AVALAIBLE_STATUS= "avalaible"
   BUSY_STATUS= "busy"
   RESERVED_STATUS= "reserved"
+  WAITING_FOR_TRANSFER_STATUS= "waiting_for_transfer"
   
   scope :avalaible, where(status: AVALAIBLE_STATUS)
   scope :busy, where(status: BUSY_STATUS)
   scope :reserved, where(status: RESERVED_STATUS) 
+  scope :waiting_for_transfer, where(status: WAITING_FOR_TRANSFER_STATUS)
   
   attr_accessible :description, :dimension, :name, :status, :sleeping, :number_of_rooms, :day_price, :week_price 
   attr_accessible :image
@@ -30,6 +32,10 @@ class Room < ActiveRecord::Base
 
   def book!
     self.update_attribute("status", RESERVED_STATUS)
+  end
+
+  def wait_for_transfer
+    self.update_attribute("status", WAITING_FOR_TRANSFER_STATUS)
   end
   
 end

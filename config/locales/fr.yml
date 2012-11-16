@@ -2,6 +2,10 @@ fr:
   activerecord:
     models:
       user: "Utilisateur"
+      admin_user: "Administrateur"
+      agency: "Agence"
+      room: "Pièce"
+      stay: "Séjour"
     attributes:
       user:
         first_name: "Prénom"
@@ -9,6 +13,35 @@ fr:
         address: "Adresse"
         phone: "Téléphone"
         password: "Mot de passe"
+      room:
+        name: "Nom"
+        description: "Description"
+        dimension: "Dimensions"
+        status: "Statut"
+        number_of_rooms: "Nombre de pièces"
+        sleeping: "Couchage"
+        day_price: "Prix à la journée"
+        week_price: "Prix à la semaine"
+        capacity: "Capacité"
+      stay:
+        arrival_date: "Date d'arrivée"
+        departure_date: "Date de départ"
+        number_of_adults: " Nombre d'adultes"
+        number_of_children: "Nombre d'enfants"
+        waiting_for_transfer: "En attente de virement"
+      agency:
+        name: "Nom"
+        password: "Mot de passe"
+        client_first_name: "Prénom du client"
+        client_last_name: "Nom du client"
+        email: "Email"
+        tva_number: "Numéro de TVA intracommunautaire"
+        address: "Adresse"
+        country: "Pays"
+        phone: "Téléphone"
+        mobile_phone: "Téléphone portable"
+        zip_code: "Code postal"
+        commentary: "Commentaires"
     errors:
       models:
         user:
@@ -27,3 +60,5 @@ fr:
   day: "jour"
   details: "Plus de détails"
   avalaible_rooms: "Chambre(s) disponible(s)"
+  language_change: "English Website"
+  confirmed_reservation: "Votre réservation a correctement été effectué. Veuillez procéder au virement dès que possible. Un email de confirmation vous sera envoyé lorsque nous aurons reçu le virement. Merci beaucoup d'avoir choisi RésidenceGoldwyn."
