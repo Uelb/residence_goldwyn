@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20121105024332) do
   end
 
   create_table "rooms", :force => true do |t|
-    t.string   "name"
+    t.string   "name",                                          :null => false
     t.text     "description"
     t.string   "dimension"
     t.datetime "created_at",                                    :null => false
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20121105024332) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "stays", :force => true do |t|
-    t.datetime "arrival_date"
+    t.datetime "arrival_date",                            :null => false
     t.datetime "departure_date"
     t.integer  "user_id"
     t.datetime "created_at",                              :null => false
