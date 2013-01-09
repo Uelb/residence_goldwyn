@@ -27,7 +27,7 @@
       - departure_date= @stay.nil? ? "" : "#{@stay.departure_date.day}/#{@stay.departure_date.month}/#{@stay.departure_date.year}"
       #week-picker
       =form_tag "/stays", :method => "post" do 
-        = field_set_tag "", :class => 'arrival_date',  do
+        = field_set_tag "", :class => 'arrival_date'  do
           = label_tag :arrival_date, t(:arrival_date)
           = text_field_tag :fake_arrival_date, arrival_date, :disabled => "disabled"
           = hidden_field :stay, :arrival_date, :value => arrival_date
