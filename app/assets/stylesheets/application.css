@@ -55,3 +55,6 @@ input[type=submit]:hover{
 	font-weight: normal;
 	color:#000;
 }
+#week-picker{
+	display:none;
+}
