@@ -19,6 +19,8 @@
 
 #Ignore paperclip images
 /public/system
+logfile
+/usr
 
 #Ignore tags
 .tags
