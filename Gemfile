@@ -7,7 +7,7 @@ source 'http://gems.github.com'
 
 gem 'unicorn'
 
-gem 'rails', '3.2.6'
+gem 'rails'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
