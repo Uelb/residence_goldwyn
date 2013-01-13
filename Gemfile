@@ -18,8 +18,6 @@ gem "paperclip", "~> 3.0"
 gem 'sass-rails', '~> 3.2.3'
 gem 'haml-rails'
 gem 'jquery-rails', '1.0.16'
-gem 'jquery_mobile-rails'
-gem 'execjs'
 gem 'coffee-script'
 gem 'coffee-filter'
 gem 'rails-i18n'
