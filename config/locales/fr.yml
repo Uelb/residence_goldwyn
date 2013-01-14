@@ -1,4 +1,8 @@
 fr:
+  time:
+    formats:
+      long: "%d/%m/%Y"
+      default: "%d/%m/%Y"
   activerecord:
     models:
       user: "Utilisateur"

@@ -2,7 +2,6 @@ class StaysController < ApplicationController
   
   def new
     @stay= Stay.find session[:stay_id] unless session[:stay_id].nil?
-    @available_rooms= Room.avalaible
     @images_to_display= SupersizedImage.visible.map do |supersized|
       supersized.image.url
     end

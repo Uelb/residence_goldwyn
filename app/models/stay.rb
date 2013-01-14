@@ -18,9 +18,7 @@ class Stay < ActiveRecord::Base
   end
   
   def verify_avalaibility(room)
-    if room.status != "avalaible"
-      raise "Cette chambre n'est pas disponible"
-    elsif self.rooms.include? room
+    if self.rooms.include? room
       raise "Cette chambre est déja inclue dans ce séjour"
     end
   end
@@ -32,17 +30,7 @@ class Stay < ActiveRecord::Base
   def pay!
     self.update_attribute("paid", true)
   end
-
-  def book!
-    self.rooms.map(&:book!)
-  end
   
-  def turn_rooms_to_avalaible
-    self.rooms.each do |room|
-      room.update_attribute("status",Room::AVALAIBLE_STATUS)
-    end
-  end
-
   def wait_for_transfer
     self.rooms.each(&:wait_for_transfer)
     self.update_attribute("waiting_for_transfer",true)
