@@ -18,9 +18,6 @@ class Stay < ActiveRecord::Base
   end
   
   def verify_avalaibility(room)
-    p room 
-    p room.status
-    p room.status != "avalaible"
     if room.status != "avalaible"
       raise "Cette chambre n'est pas disponible"
     elsif self.rooms.include? room
