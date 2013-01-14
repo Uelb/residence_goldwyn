@@ -4,25 +4,20 @@ source 'http://gems.github.com'
 #############################################################
 #	Rails
 #############################################################
-
-gem 'unicorn'
-
 gem 'rails', '3.2.6'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'haml-rails'
+  gem 'jquery-rails', '1.0.16'
+  gem 'coffee-filter'
 end
 
 gem "paperclip", "~> 3.0"
-gem 'sass-rails', '~> 3.2.3'
-gem 'haml-rails'
-gem 'jquery-rails', '1.0.16'
-gem 'coffee-script'
-gem 'coffee-filter'
-gem 'rails-i18n'
+
 gem 'therubyracer'
-gem 'http_accept_language', :git => "git://github.com/iain/http_accept_language.git"
 gem "rufus-scheduler"
 
 #############################################################
@@ -52,51 +47,4 @@ gem 'omniauth'
 gem 'activeadmin', '~> 0.4.0'
 gem 'meta_search', '>= 1.1.3'
 
-#############################################################
-#	Configuration
-#############################################################
-
-gem 'rails_config'
-
-#############################################################
-#	Support
-#############################################################
-
-gem 'rake'
-gem 'mail'
-gem 'httparty'
-gem 'sitemap_generator'
-
-#############################################################
-#	Testing
-#############################################################
-
-group :test, :development do
-  gem 'rspec', '~> 2.10.0'
-  gem 'rspec-core', '~> 2.10.0'
-  gem 'rspec-expectations', '~> 2.10.0'
-  gem 'rspec-rails', '~> 2.10.0'
-  gem 'autotest'
-  gem 'autotest-standalone'
-  gem 'autotest-rails'
-  gem 'autotest-fsevent', '0.2.8'
-  gem 'autotest-growl'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'factory_girl_rails', '~> 3.2.0'
-  gem 'simplecov'
-end
-
-group :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
-group :development do
-  gem 'rails-footnotes'
-  gem 'silent-postgres'
-  gem 'ruby-debug19'
-  gem 'pry'
-end
 
