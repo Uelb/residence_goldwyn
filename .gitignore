@@ -19,7 +19,10 @@
 
 #Ignore paperclip images
 /public/system
+logfile
+/usr
 
 #Ignore tags
 .tags
 .tags_sorted_by_file
+Gemfile.lock

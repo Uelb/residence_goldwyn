@@ -5,7 +5,6 @@ source 'http://gems.github.com'
 #	Rails
 #############################################################
 gem 'rails', '3.2.6'
-
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
