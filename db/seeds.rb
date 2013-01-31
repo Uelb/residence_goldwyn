@@ -4,3 +4,4 @@ AdminUser.create(:email => "rudy@oxynum.fr", :password => "poiuytreza", :passwor
 AdminUser.create(:email => "samy@oxynum.fr", :password => "bleuciel", :password_confirmation => "bleuciel")
 
 Room.create(:name => "Duo Room", :sleeping => "2 lits simples ou 1 lit double", :number_of_rooms => 2, :dimension => "35 m2", :description => "Chambre supérieure, idéale pour un repos bien mérité")
+Room.create(:name => "Duo Room", :sleeping => "2 lits simples ou 1 lit double", :week_price => "1500", :number_of_rooms => 2, :dimension => "35 m2", :description => "Chambre supérieure, idéale pour un repos bien mérité")

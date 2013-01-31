@@ -1,0 +1,13 @@
+.new_user label{
+	width:200px;
+	text-align:right;
+	line-height:25px;
+	display:block;
+	float:left;
+	padding-right:10px;
+}
+.new_user input[type=text]{
+	float:left;
+}
+.new_user div{clear:both; zoom:1;}
+.new_user{padding-top:15px;}

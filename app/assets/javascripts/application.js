@@ -13,3 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./lib
+var app = {
+	init : function(){
+		app.calendarUI();
+	},
+	calendarUI : function(){
+		$('.arrival_date').bind({
+			click : function(){
+				$('#week-picker').show();
+			}
+
+		});
+
+		$('#week-picker').bind({
+			mouseleave : function(){
+				$(this).hide();
+			}
+		});
+	}
+}
+
+$(document).ready(function(){
+	app.init();
+});
