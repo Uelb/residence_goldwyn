@@ -33,9 +33,23 @@
     %h2 Chambre(s) non disponible(s)
     #reserved
       - @reserved.each do |room|
-        = image_tag room.image.url, :size => "150x150"
-        = room.name
-        = room.description
-        = room.dimension
-        = room.number_of_rooms.to_s
-        = room.sleeping
+        .room{:id => "show_room_#{room.id}"}
+          = image_tag room.image.url, :size => "150x150", :class => "imgRoom"
+          .content
+            %h3.name 
+              = room.name
+            .desc
+              = room.description
+            .size
+              = room.dimension
+            .number
+              = room.number_of_rooms.to_s+" Pièce(s)"
+            .sleep
+              = room.sleeping
+            = link_to(t(:details), room_path(room))
+          .info
+            %span.price
+              = room.week_price.to_s
+              %span.labelPrice
+                = "€/"+t(:week)
+          .clear
