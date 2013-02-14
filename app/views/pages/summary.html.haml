@@ -1,10 +1,10 @@
 - stay_week_price = @stay.rooms.map(&:week_price).sum
 .general
-	%h1 Méthode de paiement
+	%h1 Sélectionner votre méthode de paiement
 	.recap
-		.week_price=stay_week_price.to_s + " euros"
-		.date=l(@stay.arrival_date) + " - " + l(@stay.departure_date)
-
+		.week_price="Le montant total de votre réservation est de " + stay_week_price.to_s + " euros"
+		.date="Pour la période suivante : " + l(@stay.arrival_date) + " - " + l(@stay.departure_date)
+	
 	= form_tag "https://secure.ogone.com/ncol/test/orderstandard.asp", :method => :post, :name => "form1", :id => "form1" do
 		=hidden_field_tag "ACCEPTURL", "http://www.residencegoldwyn.fr/confirmation"
 		=hidden_field_tag "AMOUNT", "#{(stay_week_price)}"
@@ -28,4 +28,4 @@
 		=submit_tag "Accéder au paiement par carte bancaire", class: "cb"
 
 
-	= link_to "Accéder au paiement par virement bancaire sous 7 jours.", virement_path
+	= link_to "Accéder au paiement par virement bancaire sous 7 jours.", virement_path, class: "bank" 

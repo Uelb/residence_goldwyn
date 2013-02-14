@@ -23,9 +23,10 @@
 	width:900px;
 	margin:50px auto;
 	min-height: 400px;
+	font-size:1.3em;
 }
 
-.particulier a, .pro a, .connect a{
+.particulier a, .pro a, .connect a, .firstconnect a{
 	display:block;
 	width:200px;
 	height:30px;
@@ -35,6 +36,9 @@
 	background:#c00;
 	margin-top:10px;
 	margin-bottom:10px;
+}
+.firstconnect a{
+	width:340px;
 }
 .imgLog{
 	margin-bottom: 10px;
@@ -62,12 +66,27 @@ input[type=submit]:hover{
 }
 input[type=submit].cb{
 	background: url(/assets/cb_logo.png) no-repeat left center transparent;
-	height:200px;
-	margin:10px auto;
-	padding-left:300px;
+	height:100px;
+	margin:30px 0;
+	padding-left:250px;
 	color:#333;
 	display:block;
-	font-size: 1.6em;
+	font-weight:normal;
+	text-decoration:underline;
+	font-size: 1.2em;
+}
+a.bank{
+	border-top:1px solid #ccc;
+	background: url(/assets/bank.png) no-repeat left center transparent;
+	height:100px;
+	padding: 30px 0;
+	margin:0;
+	padding-left:250px;
+	color:#333;
+	display:block;
+	text-decoration:underline;
+	font-size: 1.2em;
+	line-height:100px;
 }
 .price{color:#333; font:bold 18px Arial, Helvetica, Tahoma; margin-bottom:5px;}
 .price .labelPrice{
@@ -82,10 +101,10 @@ input[type=submit].cb{
 	left: 200px;
 }
 .new_user{
-	width:520px;
+	width:450px;
 	float:left;
 	display:block;
-	padding-left:10px;
+	padding-left:5px;
 	border-left:1px solid #ccc;
 }
 .new_user input[type=search], .new_user input[type=text], .new_user input[type=password], , .new_user input[type=tel]{
@@ -96,7 +115,7 @@ input[type=submit].cb{
 
 .lbl{
 	float:left;
-	width:300px;
+	width:350px;
 }
 div.backto a{
 	display:block;
@@ -114,3 +133,26 @@ div.backto a{
 input[type="text"], input[type="search"], input[type="mail"], textarea{
 	border:1px solid #ccc;
 }
+p.alert, p.notice{
+	position: relative;
+	z-index: 99;
+	background: #c00;
+	margin: 0;
+	color: #fff;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 30px;
+}
+a.button{
+	width:250px;
+	display: block;
+	line-height: 35px;
+	border-radius: 5px;
+	background:#c00;
+	color:#fff;
+	margin-top:20px;
+	text-align: center;
+}
+p{margin:0;}

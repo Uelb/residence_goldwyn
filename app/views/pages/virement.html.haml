@@ -1,9 +1,10 @@
-Si vous confirmer ce mode de paiement, veuillez noter les informations ci dessous et effectuer un virement bancaire sous 7 jours :
+.general
+	%h1 Confirmation de virement
+	%p Si vous confirmer ce mode de paiement, veuillez noter les informations ci dessous et effectuer un virement bancaire sous 7 jours : RIB 
+	.rib
+		= image_tag "/assets/rib.gif"
 
-RIB 
+	= "Libéllé du virement : Sejour n°#{@stay.id} + Votre Nom"
 
-= image_tag "/assets/rib.gif"
+	= link_to "Confirmation", stays_waiting_for_transfer_path, class: "button"
 
-= "Libéllé du virement : Sejour n°#{@stay.id} + Votre Nom"
-
-= link_to "Confirmation", stays_waiting_for_transfer_path
