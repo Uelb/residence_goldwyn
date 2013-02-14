@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_filter :find_stay
   
   def create
     super
@@ -26,5 +27,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_update_path_for(resource)
     summary_path
+  end
+
+  def find_stay
+    if session[:stay_id].present?
+      @stay= Stay.find session[:stay_id]
+    end
   end
 end
