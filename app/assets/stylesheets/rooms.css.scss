@@ -36,10 +36,10 @@ a{
 	left: 0;
 	width:85%;
 	padding:20px 0 20px 15%;
-	height:50px;
 	background:#222222;
 	color:#ffffff;
 	z-index:500;
+	margin-bottom:50px;
 }
 fieldset{display:inline; border:0 none;margin-right:15px;margin-bottom:10px;}
 
@@ -95,4 +95,38 @@ div.content a{
 	margin-top:10px;
 	display:block;
 }
-div.room{border-bottom: 1px dotted #eee;margin-bottom:20px;}
+div.room{border-bottom: 1px dotted #eee;margin-bottom:20px; width:900px; margin:auto;}
+.TbigImg{
+	width:400px;
+	float:left;
+}
+.Tcontent{
+	width:450px;
+	float:right;
+}
+.Timg{
+	margin:15px auto;
+	clear:both;
+}
+.Tname{
+	font-size:2em;
+	color:#444;
+}
+.Tdesc, .Tsize, .Troom{
+	font-size:1.3em;
+	color:#444;
+}
+.Tback{
+	clear:both;
+}
+.Tback a{
+	display:block;
+	width:150px;
+	background:#c00;
+	color:#fff;
+	text-decoration:none;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+	font-size:1.2em;
+}

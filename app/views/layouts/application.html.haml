@@ -42,7 +42,7 @@
           = label_tag :quantity, t(:number_of_children)
           = select :stay, :number_of_children, 0..5
         = submit_tag t(:reservation)
-        %div
+        %div.backto
           = link_to t(:back_to_homepage), root_path
 
 

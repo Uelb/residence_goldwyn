@@ -12,27 +12,29 @@
  *= require_tree ./default
  *= require_tree ./ui-darkness
  */
-
-.particulier{
-	float:left;
-	width:350px;
-	padding:20px;
-	background: #f0f0f0;
-	height:100px;
-	margin-bottom: 20px;
-	text-align: center;
+.resa{
+	min-height:400px;
 }
-.pro{
-	float:right;
-	width:350px;
-	padding:20px;
-	background: #f0f0f0;
-	height:100px;
-	margin-bottom:20px;
-	text-align: center;
+.particulier, .pro{
+	float:left;
+	width:250px;
+}
+.particulier a, .pro a, .connect a{
+	display:block;
+	width:200px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+	background:#c00;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 .imgLog{
 	margin-bottom: 10px;
+}
+.infogeneral{
+	margin-top:25px;
 }
 input[type=submit]{
 	background: #ffae00;
@@ -60,4 +62,28 @@ input[type=submit]:hover{
 	position:absolute;
 	top: 60px;
 	left: 200px;
+}
+.new_user{
+	width:550px;
+	float:left;
+	display:block;
+}
+.lbl{
+	float:left;
+	width:300px;
+}
+div.backto a{
+	display:block;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+	background:#c00;
+}
+.adress textarea{
+	height:35px;
+}
+input[type="text"], input[type="search"], input[type="mail"], textarea{
+	border:1px solid #ccc;
 }

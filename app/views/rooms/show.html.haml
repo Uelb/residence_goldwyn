@@ -1,24 +1,22 @@
 -# encoding: utf-8
 %div{:id => "room_#{@room.id}", :class => "room"}
-  = image_tag @room.image.url, :size => "400x400"
-  .Tname 
-  = @room.name
-  .Tdesc 
-  = @room.description
-  .Tsize 
-  = @room.dimension
-  .Troom 
-  = @room.number_of_rooms.to_s
-  = @room.sleeping
-  = image_tag @room.image.url, :size => "150x150"
-  = image_tag @room.image_2.url, :size => "150x150"
-  = image_tag @room.image_3.url, :size => "150x150"
-  = image_tag @room.image_4.url, :size => "150x150"
-  = image_tag @room.image_5.url, :size => "150x150"
-  = link_to "Retour", rooms_path
-#footer
-  &copy; Résidence Goldwyn 2012, Cannes (croisettes) | SCI | contact: +33 280 78 09 67
-  |
-  = link_to "Conditions générales de ventes", cgv_path
-  |
-  = link_to "Agence et professionnel", '/pro/index.html'
+  .TbigImg
+    = image_tag @room.image.url, :size => "400x400"
+  .Tcontent
+    .Tname 
+      = @room.name
+    .Tdesc 
+      = @room.description
+    .Tsize 
+      = @room.dimension
+    .Troom 
+      = @room.number_of_rooms.to_s
+      = @room.sleeping
+    .Timg
+      = image_tag @room.image.url, :size => "150x150"
+      = image_tag @room.image_2.url, :size => "150x150"
+      = image_tag @room.image_3.url, :size => "150x150"
+      = image_tag @room.image_4.url, :size => "150x150"
+      = image_tag @room.image_5.url, :size => "150x150"
+  .Tback
+    = link_to "Retour", rooms_path
