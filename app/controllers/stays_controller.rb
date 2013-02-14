@@ -19,9 +19,9 @@ class StaysController < ApplicationController
     @stay.number_of_children= params[:stay][:number_of_children] 
     if params[:stay][:arrival_date]!="" && params[:stay][:departure_date]!="" && @stay.save
       session[:stay_id]= @stay.id 
-      redirect_to rooms_path, :alert => t(:date_empty_error)
+      redirect_to rooms_path
     else
-      redirect_to root_path, :alert => t(:reservation_error)
+      redirect_to root_path, :alert => t(:date_empty_error)
     end
   end
   

@@ -15,6 +15,8 @@
     = javascript_include_tag "datepicker"
     = yield :head
   %body
+    - if user_signed_in?
+      = link_to 'Sign out', destroy_user_session_path, :method => :delete
     - if notice || alert
       %p.notice= notice
       %p.alert= alert
