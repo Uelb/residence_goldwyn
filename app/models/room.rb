@@ -15,7 +15,7 @@ class Room < ActiveRecord::Base
 
   has_and_belongs_to_many :stays
   
-  validates_presence_of :name
+  validates_presence_of :week_price, unless: :day_price?
   validates :name, :uniqueness => true
   
   def is_reserved? stay
@@ -31,5 +31,9 @@ class Room < ActiveRecord::Base
     end
     return reserved
   end 
+
+  def day_price?
+    !self.day_price.nil?
+  end
 
 end

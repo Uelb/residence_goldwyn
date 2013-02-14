@@ -1,5 +1,9 @@
 fr:
   errors:
+    models:
+      users:
+        attributes:
+          taken: "Cet email est déjà utilisé"
     messages:
       expired: "a expiré, merci d'en faire une nouvelle demande"
       not_found: "n'a pas été trouvé(e)"

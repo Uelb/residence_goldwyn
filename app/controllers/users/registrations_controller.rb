@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    puts "aqeswrxdcftgvbhklnjk,mjnhbgvfcdxsewxrcdfvbghnj,nhbgvfcdxscdfvbghnj,nhbgfvcd"
     summary_path
   end
 

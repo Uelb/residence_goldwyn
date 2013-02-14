@@ -17,7 +17,7 @@ class StaysController < ApplicationController
     @stay.departure_date= DateTime.parse params[:stay][:departure_date]+" 05:00:00 +1"
     @stay.number_of_adults= params[:stay][:number_of_adults]
     @stay.number_of_children= params[:stay][:number_of_children] 
-    if @stay.save
+    if params[:stay][:arrival_date]!="" && params[:stay][:departure_date]!="" && @stay.save
       session[:stay_id]= @stay.id 
       redirect_to rooms_path
     else
