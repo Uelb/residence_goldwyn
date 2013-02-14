@@ -21,7 +21,7 @@ class Room < ActiveRecord::Base
   def is_reserved? stay
     important_stays = self.stays.paid + self.stays.waiting_for_transfer
     important_stays.each do |important_stay|
-      if (important_stay.arrival_date > stay.arrival_date && important_stay.arrival_date < stay.departure_date) || (important_stay.departure_date > stay.arrival_date && important_stay.departure_date < stay.departure_date)
+      if (important_stay.arrival_date >= stay.arrival_date && important_stay.arrival_date <= stay.departure_date) || (important_stay.departure_date >= stay.arrival_date && important_stay.departure_date <= stay.departure_date)
         return true
       end
     end
