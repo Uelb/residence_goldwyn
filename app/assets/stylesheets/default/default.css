@@ -20,3 +20,6 @@ h2{
 	text-align: center;
 }
 .clear{clear:both;}
+#error_explanation{
+	color:#c00;
+}

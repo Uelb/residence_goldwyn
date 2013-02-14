@@ -1,22 +1,24 @@
-%h2 Connexion
-
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-	%div
-		= f.label :email
-		%br
-		= f.email_field :email
-
-	%div
-		= f.label :password
-		%br
-		= f.password_field :password
-
-	- if devise_mapping.rememberable?
+.general
+	%h2 Connexion	
+	
+	%div.lbl
+		= render :partial => "users/shared/links"
+	
+	= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
 		%div
-			= f.check_box :remember_me
-			= f.label :remember_me
+			= f.label :email
+			%br
+			= f.email_field :email
 
-	%div
-		= f.submit "Se connecter"
+		%div
+			= f.label :password
+			%br
+			= f.password_field :password
 
-= render :partial => "users/shared/links"
+		- if devise_mapping.rememberable?
+			%div
+				= f.check_box :remember_me
+				= f.label :remember_me
+
+		%div.btnvalid
+			= f.submit "Se connecter"

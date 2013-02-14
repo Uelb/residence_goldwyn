@@ -62,5 +62,9 @@ module ResidenceGoldwyn
     config.assets.initialize_on_precompile = false
     Encoding.default_external = Encoding::UTF_8
     Encoding.default_internal = Encoding::UTF_8
+    #change error symbolise
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+        "#{html_tag}".html_safe 
+    }
   end
 end

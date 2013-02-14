@@ -95,7 +95,13 @@ div.content a{
 	margin-top:10px;
 	display:block;
 }
-div.room{border-bottom: 1px dotted #eee;margin-bottom:20px; width:900px; margin:auto;}
+div.room{
+	border-bottom: 1px dotted #eee;
+	margin-bottom:20px;
+	width:900px; 
+	margin:auto;
+	margin-top:20px;
+}
 .TbigImg{
 	width:400px;
 	float:left;
