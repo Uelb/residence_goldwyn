@@ -24,9 +24,9 @@
               %span.check
                 = check_box :room, room.id
               %span.price
-                = room.day_price.to_s
+                = room.week_price.to_s
                 %span.labelPrice
-                  = "€/"+t(:day)
+                  = "€/"+t(:week)
             .clear
       = submit_tag "Valider votre réservation"
   - unless @reserved.nil?||@reserved.empty?    

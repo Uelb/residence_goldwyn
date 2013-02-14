@@ -19,17 +19,13 @@ class Room < ActiveRecord::Base
   validates :name, :uniqueness => true
   
   def is_reserved? stay
-    reserved=false
-    room_stays= self.stays
-    if self.stays.empty?
-      return reserved
-    end
-    room_stays.each do |stay_to_compare|
-      if stay_to_compare.arrival_date < stay.arrival_date && stay.arrival_date < stay_to_compare.departure_date 
-        reserved=true
+    important_stays = self.paid + self.waiting_for_transfer
+    important_stays.each do |important_stay|
+      if (important_stay.arrival_date > stay.arrival_date && important_stay.arrival_date < stay.departure_date) || (important_stay.departure_date > stay.arrival_date && important_stay.departure_date < stay.departure_date)
+        return true
       end
     end
-    return reserved
+    return false
   end 
 
   def day_price?
