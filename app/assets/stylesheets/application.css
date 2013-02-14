@@ -33,6 +33,9 @@
 .imgLog{
 	margin-bottom: 10px;
 }
+.signup{
+	margin-bottom:50px;
+}
 .infogeneral{
 	margin-top:25px;
 }
@@ -64,10 +67,17 @@ input[type=submit]:hover{
 	left: 200px;
 }
 .new_user{
-	width:550px;
+	width:520px;
 	float:left;
 	display:block;
+	padding-left:10px;
+	border-left:1px solid #ccc;
 }
+.new_user input[type=search], .new_user input[type=text], .new_user input[type=password], , .new_user input[type=tel]{
+	width:170px;
+}
+.btnvalid{padding-left:120px;}
+
 .lbl{
 	float:left;
 	width:300px;
@@ -83,6 +93,7 @@ div.backto a{
 }
 .adress textarea{
 	height:35px;
+	width:170px;
 }
 input[type="text"], input[type="search"], input[type="mail"], textarea{
 	border:1px solid #ccc;
