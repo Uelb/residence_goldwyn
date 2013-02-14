@@ -50,6 +50,9 @@ fr:
       models:
         user:
           blank: " : Le champ n'a pas correctement été rempli"
+          attributes:
+            email:
+              taken: ": Cet email est déjà utilisé"
   arrival_date: "Date d'arrivée : "
   departure_date: "Date de départ : "
   number_of_adults: "Nombre d'adultes : "
@@ -69,3 +72,4 @@ fr:
   confirmed_reservation: "Votre réservation a correctement été effectué. Veuillez procéder au virement dès que possible. Un email de confirmation vous sera envoyé lorsque nous aurons reçu le virement. Merci beaucoup d'avoir choisi RésidenceGoldwyn."
   congrat: "Merci"
   reservation_ok: "Votre réservation a été complété avec succes"
+  date_empty_error: "Une erreur s'est produite, veuillez sélectionner une date pour continuer votre réservation"

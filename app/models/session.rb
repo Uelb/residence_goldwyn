@@ -10,13 +10,11 @@ class Session < ActiveRecord::Base
   end
   
   def check_if_stay_paid
-    if self[:stay_id].nil?
+    stay = Stay.find self[:stay_id] rescue return true
+    if stay.nil? || !stay.paid? && !stay.waiting_for_transfer && stay.agency.nil?
       return true
     else
-      s= Stay.find self[:stay_id]
-      if !s.paid? && agency_id.nil?
-        s.destroy
-      end
+      return false
     end
   end
 end

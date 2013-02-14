@@ -42,8 +42,8 @@ class PagesController < ApplicationController
   def payment_error
     
   end
+
   def payment_cancel
-    
   end
   
   def pro

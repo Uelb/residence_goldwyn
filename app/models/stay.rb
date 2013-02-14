@@ -1,6 +1,6 @@
 # encoding:utf-8
 class Stay < ActiveRecord::Base
-  attr_accessible :arrival_date, :departure_date, :number_of_adults, :number_of_children     
+  attr_accessible :arrival_date, :departure_date, :number_of_adults, :number_of_children, :user_id, :agency_id, :paid, :waiting_for_transfer   
   
   belongs_to :user
   belongs_to :agency
@@ -33,7 +33,6 @@ class Stay < ActiveRecord::Base
   end
   
   def wait_for_transfer
-    self.rooms.each(&:wait_for_transfer)
     self.update_attribute("waiting_for_transfer",true)
   end
 

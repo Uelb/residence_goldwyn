@@ -19,9 +19,9 @@ class StaysController < ApplicationController
     @stay.number_of_children= params[:stay][:number_of_children] 
     if params[:stay][:arrival_date]!="" && params[:stay][:departure_date]!="" && @stay.save
       session[:stay_id]= @stay.id 
-      redirect_to rooms_path
+      redirect_to rooms_path, :alert => t(:date_empty_error)
     else
-      redirect_to root_path, :notice => t(:reservation_error)
+      redirect_to root_path, :alert => t(:reservation_error)
     end
   end
   
@@ -34,7 +34,7 @@ class StaysController < ApplicationController
     # elsif @rooms.map(&:capacity)reject(&:nil?).sum < (@stay.number_of_children + @stay.number_of_adults)
     #   redirect_to rooms_path, :alert => "Vous avez choisi des chambres offrant une capacité de #{@rooms.map(&:capacity).sum}, cependant vous avez indiqué #{@stay.number_of_children + @stay.number_of_adults} personnes pour ce séjour." and return
     end 
-    @stay.rooms += @rooms
+    @stay.rooms = @rooms
     redirect_to before_payment_path
   end
     
@@ -46,6 +46,7 @@ class StaysController < ApplicationController
   def waiting_for_transfer
     @stay= Stay.find session[:stay_id]
     @stay.wait_for_transfer
+    reset_session
   end
 
 end

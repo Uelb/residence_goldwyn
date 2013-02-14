@@ -30,9 +30,7 @@ ResidenceGoldwyn::Application.routes.draw do
     devise_for :admin_users, ActiveAdmin::Devise.config   
 
     devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions" }
-    as :user do
-      get "/login" => "pages#summary"
-    end
+
   end
 
 end

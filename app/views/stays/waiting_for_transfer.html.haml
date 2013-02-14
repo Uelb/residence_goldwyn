@@ -1,1 +1,5 @@
 = t(:confirmed_reservation)
+
+%br
+=@stay.rooms.map(&:week_price).sum.to_s + "euros"
+= image_tag "/assets/rib.gif"

@@ -1,8 +1,5 @@
 ActiveAdmin.register Room do
 
-scope :avalaible
-scope :reserved
-scope :busy
 filter :name
 filter :dimension
 filter :number_of_rooms
