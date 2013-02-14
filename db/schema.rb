@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105024332) do
+ActiveRecord::Schema.define(:version => 20130214081048) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20121105024332) do
     t.string   "client_first_name"
     t.string   "email"
     t.string   "tva_number"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "client_last_name"
     t.string   "address"
     t.string   "country"
@@ -61,7 +61,10 @@ ActiveRecord::Schema.define(:version => 20121105024332) do
     t.string   "mobile_phone"
     t.string   "zip_code"
     t.text     "commentary"
+    t.boolean  "approved",          :default => false, :null => false
   end
+
+  add_index "agencies", ["approved"], :name => "index_agencies_on_approved"
 
   create_table "rooms", :force => true do |t|
     t.string   "name",                                          :null => false

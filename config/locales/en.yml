@@ -48,6 +48,12 @@ en:
         commentary: "Commentary"
     errors:
       models:
+        agency:
+          attributes:
+            mobile_phone:
+              wrong_length: "The length of this phone number is incorrect"
+            phone:
+              wrong_length: "The length of this phone number is incorrect"
         user:
           blank: " : The field has not been filled correctly"
   arrival_date: "Arrival Date"
@@ -70,3 +76,6 @@ en:
   congrat: "Congratulations"
   reservation_ok: "Your reservation has been completed succesfully"
   date_empty_error: "An error has been detected. Please pick a date and try again."
+  authentication_error: "Sorry, we cannot find you in our database. Please check your login information and try again"
+  error_occured: "An error hs been detected."
+  wait_for_activation: "Your account has not been validated by the administrator. Don't worry, we will soon take care of you !"

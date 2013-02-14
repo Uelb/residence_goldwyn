@@ -48,6 +48,12 @@ fr:
         commentary: "Commentaires"
     errors:
       models:
+        agency:
+          attributes:
+            mobile_phone:
+              wrong_length: "Le numéro de téléphone n'est pas de la bonne taille."
+            phone:
+              wrong_length: "Le numéro de téléphone n'est pas de la bonne taille."
         user:
           blank: " : Le champ n'a pas correctement été rempli"
           attributes:
@@ -73,3 +79,6 @@ fr:
   congrat: "Merci"
   reservation_ok: "Votre réservation a été complété avec succes"
   date_empty_error: "Une erreur s'est produite, veuillez sélectionner une date pour continuer votre réservation"
+  authentication_error: "Les indentifiants que vous avez entrés sont incorrects"
+  error_occured: "Une erreur s'est produite"
+  wait_for_activation: "Votre compte est en attente de validation par l'administrateur. Patientez un peu, nous nous occupons de vous."

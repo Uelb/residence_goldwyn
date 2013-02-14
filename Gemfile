@@ -36,3 +36,4 @@ gem 'devise', '1.4.9'
 
 gem 'activeadmin', '~> 0.4.0'
 gem 'meta_search', '>= 1.1.3'
+gem "country-select"
