@@ -10,7 +10,7 @@ class Stay < ActiveRecord::Base
   before_save :verify_dates
   before_destroy :turn_rooms_to_avalaible
   scope :waiting_for_transfer, where(:waiting_for_transfer => true)
-  scope :paid, where(:paid?)
+  scope :paid, where(:paid => true)
   
   def verify_dates
     if (self.departure_date != nil && self.departure_date < self.arrival_date) || self.number_of_adults < 1 || self.arrival_date <= Time.now
