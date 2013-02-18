@@ -107,10 +107,19 @@ a.bank{
 	padding-left:5px;
 	border-left:1px solid #ccc;
 }
-.new_user input[type=search], .new_user input[type=text], .new_user input[type=password], , .new_user input[type=tel]{
+.new_user input[type=search],.new_user input[type=email], .new_user input[type=text], .new_user input[type=password], , .new_user input[type=tel]{
 	width:170px;
 }
-
+input[type=search], .new_user input[type=text], .new_user input[type=password], .new_user input[type=tel], .new_user input[type=email]{
+	border:1px solid #aaa;
+	height:25px;
+	line-height: 25px;
+}
+.field{
+	margin-top:5px;
+	clear:both;
+	padding-bottom:5px;
+}
 .btnvalid{padding-left:120px;}
 
 .lbl{
@@ -132,6 +141,21 @@ div.backto a{
 }
 input[type="text"], input[type="search"], input[type="mail"], textarea{
 	border:1px solid #ccc;
+}
+#initform input#fake_arrival_date, #initform input#fake_departure_date{
+	border:1px solid #fff;
+	margin:0;
+	padding:0;
+	text-indent:4px;
+	height:30px;
+	line-height:30px;
+	color:#fff;
+	width:80px;
+	padding-right:30px;
+	background: url(/assets/calendar.png) no-repeat right center transparent;
+}
+#initform input#fake_departure_date{
+	/*opacity: .4;*/
 }
 p.alert, p.notice{
 	position: relative;
@@ -156,3 +180,22 @@ a.button{
 	text-align: center;
 }
 p{margin:0;}
+.recap{
+	padding:2em;
+	border:1px solid #fc0;
+	color:#555;
+	background:#fbfbfb;
+}
+a.signout{
+	display:block;
+	height:30px;
+	line-height:30px;
+	position:absolute;
+	padding:0 2em 0 2.2em;
+	right:0;
+	top:0;
+	background:url(/assets/cross.png) no-repeat 2px center #c00;
+	color:#fff;
+	z-index: 9999;
+	text-decoration:none;
+}

@@ -2,7 +2,8 @@
 .general
 	%h1 Sélectionner votre méthode de paiement
 	.recap
-		.week_price="Le montant total de votre réservation est de " + stay_week_price.to_s + " euros"
+		.week_price="Le montant total de votre réservation est de :"
+		%span.price= stay_week_price.to_s + " euros"
 		.date="Pour la période suivante : " + l(@stay.arrival_date) + " - " + l(@stay.departure_date)
 	
 	= form_tag "https://secure.ogone.com/ncol/test/orderstandard.asp", :method => :post, :name => "form1", :id => "form1" do
