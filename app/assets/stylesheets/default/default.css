@@ -10,9 +10,6 @@ div.signup{
 	float:left;
 	padding-right:10px;
 }
-.new_user input[type=text]{
-	float:left;
-}
 .new_user div{clear:both; zoom:1;}
 .new_user{padding-top:15px;}
 h2{

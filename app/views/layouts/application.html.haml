@@ -16,7 +16,7 @@
     = yield :head
   %body
     - if user_signed_in?
-      = link_to 'Sign out', destroy_user_session_path, :method => :delete
+      = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "signout"
     - if notice || alert
       %p.notice= notice
       %p.alert= alert
@@ -44,9 +44,8 @@
           = label_tag :quantity, t(:number_of_children)
           = select :stay, :number_of_children, 0..5
         = submit_tag t(:reservation)
-        %div.backto
-          = link_to t(:back_to_homepage), root_path
-
+    //%div.backto
+    //  = link_to t(:back_to_homepage), root_path
 
     = yield
 
