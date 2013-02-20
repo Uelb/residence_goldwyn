@@ -31,6 +31,8 @@
 	width:200px;
 	height:30px;
 	line-height:30px;
+	text-decoration:none;
+	font-size:12px;
 	text-align:center;
 	color:#fff;
 	background:#c00;
@@ -48,6 +50,9 @@
 }
 .infogeneral{
 	margin-top:25px;
+}
+.align-right{
+	text-align:right;
 }
 input[type=submit]{
 	background: #ffae00;
