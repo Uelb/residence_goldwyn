@@ -6,7 +6,7 @@ class Room < ActiveRecord::Base
   DEFAULT_URL= "missing/original/missing.png"
   
   attr_accessible :description, :dimension, :name, :status, :sleeping, :number_of_rooms, :day_price, :week_price 
-  attr_accessible :image
+  attr_accessible :image, :image_2, :image_3, :image_4, :image_5
   has_attached_file :image, :default_url => DEFAULT_URL,  :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_attached_file :image_2, :default_url => DEFAULT_URL,  :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_attached_file :image_3, :default_url => DEFAULT_URL,  :styles => { :medium => "300x300>", :thumb => "100x100>" }
