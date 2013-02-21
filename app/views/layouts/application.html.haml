@@ -21,8 +21,7 @@
       %p.notice= notice
       %p.alert= alert
     #logo
-      %h1
-        %span Résidence Goldwyn
+      %span Résidence Goldwyn
 
     #initform
       - arrival_date= @stay.nil? ? "" : "#{@stay.arrival_date.day}/#{@stay.arrival_date.month}/#{@stay.arrival_date.year}"

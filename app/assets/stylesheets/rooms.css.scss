@@ -7,7 +7,7 @@ body{
 	color:#333;
 	font:11px arial, helvetica, tahoma;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 40px 0;
 }
 .clear{
 	clear: both;
@@ -24,7 +24,7 @@ a{
 	left:2%;
 	z-index:1000;
 }
-#logo h1 span{
+#logo span{
 	text-indent:-1000em;
 	overflow:hidden;
 	outline:none;
@@ -54,12 +54,11 @@ fieldset{display:inline; border:0 none;margin-right:15px;margin-bottom:10px;}
 	background: #FFAE00;
 }
 #footer{
-	position: relative;
+	position: fixed;
 	bottom: 0;
-	height: 20px;
 	font-size: 11px;
 	color: #fff;
-	line-height: 20px;
+	line-height: 40px;
 	width: 100%;
 	left: 0;
 	text-indent: 20px;
