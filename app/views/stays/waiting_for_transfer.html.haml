@@ -1,5 +1,6 @@
-= t(:confirmed_reservation)
-
-%br
-=@stay.rooms.map(&:week_price).sum.to_s + "euros"
-= image_tag "/assets/rib.gif"
+.general
+	%h1 Votre réservation est confirmée
+	%p= t(:confirmed_reservation)
+	.price=@stay.rooms.map(&:week_price).sum.to_s + "euros"
+	.rib
+		= image_tag "/assets/rib.gif"
