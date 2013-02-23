@@ -164,7 +164,7 @@ input[type="text"], input[type="search"], input[type="mail"], textarea{
 }
 p.alert, p.notice{
 	position: relative;
-	z-index: 99;
+	z-index: 9999;
 	background: #c00;
 	margin: 0;
 	color: #fff;

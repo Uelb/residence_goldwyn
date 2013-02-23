@@ -44,9 +44,13 @@ class StaysController < ApplicationController
   end
 
   def waiting_for_transfer
-    @stay= Stay.find session[:stay_id]
-    @stay.wait_for_transfer
-    reset_session
+    if session[:stay_id].nil?
+      redirect_to root_path, :alert => t(:expired_session) and return
+    else 
+      @stay= Stay.find session[:stay_id]
+      @stay.wait_for_transfer
+      reset_session
+    end
   end
 
 end

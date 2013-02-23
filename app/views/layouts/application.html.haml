@@ -17,8 +17,9 @@
   %body
     - if user_signed_in?
       = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "signout"
-    - if notice || alert
+    - if notice
       %p.notice= notice
+    - if alert
       %p.alert= alert
     #logo
       %span Résidence Goldwyn
@@ -52,7 +53,5 @@
       © Résidence Goldwyn 2012, Cannes (croisettes) | SCI | Contact: +33 280 78 09 67
       |
       = link_to t(:cgv), cgv_path
-      |
-      = link_to t(:agencies_and_pros), pro_path   
       |
       =link_to t(:language_change), (I18n.locale == :en) ? url_for(:locale => :fr) : url_for(:locale => :en)

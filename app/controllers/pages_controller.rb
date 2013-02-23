@@ -45,12 +45,6 @@ class PagesController < ApplicationController
 
   def payment_cancel
   end
-  
-  def pro
-    if session[:agency_id].nil?
-      redirect_to root_path, :notice => "Une erreur s'est produite"
-    end
-  end
 
   def virement
     if session[:stay_id]

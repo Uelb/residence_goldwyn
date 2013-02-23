@@ -16,6 +16,7 @@
 var app = {
 	init : function(){
 		app.calendarUI();
+		app.noticed();
 	},
 	calendarUI : function(){
 		$('.arrival_date').bind({
@@ -30,6 +31,10 @@ var app = {
 				$(this).hide();
 			}
 		});
+	},
+	noticed : function(){
+		$(".notice, .alert").hide();
+		$(".notice, .alert").fadeIn(1000).delay(1000).fadeOut(1000);
 	}
 }
 

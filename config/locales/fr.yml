@@ -82,3 +82,4 @@ fr:
   authentication_error: "Les indentifiants que vous avez entrés sont incorrects"
   error_occured: "Une erreur s'est produite"
   wait_for_activation: "Votre compte est en attente de validation par l'administrateur. Patientez un peu, nous nous occupons de vous."
+  expired_session: "Votre session a expiré"
