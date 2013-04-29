@@ -1,32 +1,37 @@
 - stay_week_price = @stay.rooms.map(&:week_price).sum * 100
 .general
-	%h1 Sélectionner votre méthode de paiement
-	.recap
-		.week_price="Le montant total de votre réservation est de :"
-		%span.price= stay_week_price.to_s + " euros"
-		.date="Pour la période suivante : " + l(@stay.arrival_date) + " - " + l(@stay.departure_date)
-	
-	= form_tag "https://secure.ogone.com/ncol/test/orderstandard.asp", :method => :post, :name => "form1", :id => "form1" do
-		=hidden_field_tag "ACCEPTURL", "http://www.residencegoldwyn.fr/confirmation"
-		=hidden_field_tag "AMOUNT", "#{(stay_week_price)}"
-		=hidden_field_tag "CANCELURL", "http://www.residencegoldwyn.fr/payment_cancel"
-		=hidden_field_tag "CN", "#{@stay.user.try(:name)}"
-		=hidden_field_tag "CURRENCY", "EUR"
-		=hidden_field_tag "DECLINEURL", "http://www.residencegoldwyn.fr/payment_error"
-		=hidden_field_tag "EMAIL", "#{@stay.user.try(:email)}"
-		=hidden_field_tag "EXCEPTIONURL", "http://www.residencegoldwyn.fr/payment_warning"
-		=hidden_field_tag "LANGUAGE", "fr_FR"
-		=hidden_field_tag "ORDERID", "#{@stay.id}"
-		=hidden_field_tag "OWNERADDRESS", "#{@stay.user.try(:address)}"
-		- #=hidden_field_tag "OWNERCTY", ""
-		=hidden_field_tag "OWNERTELNO", "#{@stay.user.try(:phone)}"
-		- #=hidden_field_tag "OWNERTOWN", ""
-		- #=hidden_field_tag "OWNERZIP", ""
-		=hidden_field_tag "PSPID", "residencegoldwyn"
+    %h1 Sélectionner votre méthode de paiement
+    .recap
+        .week_price="Le montant total de votre réservation est de :"
+        - to_display= stay_week_price
+        - to_display = to_display.to_s
+        - to_display[-2,0] = ","
+        - (6..to_display.size).step(3) { |i|
+        -   to_display[-i,0] = " " }
+        %span.price= to_display + " euros"
+        .date="Pour la période suivante : " + l(@stay.arrival_date) + " - " + l(@stay.departure_date)
+    
+    = form_tag "https://secure.ogone.com/ncol/test/orderstandard.asp", :method => :post, :name => "form1", :id => "form1" do
+        =hidden_field_tag "ACCEPTURL", "http://www.residencegoldwyn.fr/confirmation"
+        =hidden_field_tag "AMOUNT", "#{(stay_week_price)}"
+        =hidden_field_tag "CANCELURL", "http://www.residencegoldwyn.fr/payment_cancel"
+        =hidden_field_tag "CN", "#{@stay.user.try(:name)}"
+        =hidden_field_tag "CURRENCY", "EUR"
+        =hidden_field_tag "DECLINEURL", "http://www.residencegoldwyn.fr/payment_error"
+        =hidden_field_tag "EMAIL", "#{@stay.user.try(:email)}"
+        =hidden_field_tag "EXCEPTIONURL", "http://www.residencegoldwyn.fr/payment_warning"
+        =hidden_field_tag "LANGUAGE", "fr_FR"
+        =hidden_field_tag "ORDERID", "#{@stay.id}"
+        =hidden_field_tag "OWNERADDRESS", "#{@stay.user.try(:address)}"
+        - #=hidden_field_tag "OWNERCTY", ""
+        =hidden_field_tag "OWNERTELNO", "#{@stay.user.try(:phone)}"
+        - #=hidden_field_tag "OWNERTOWN", ""
+        - #=hidden_field_tag "OWNERZIP", ""
+        =hidden_field_tag "PSPID", "residencegoldwyn"
 
-		=hidden_field_tag "SHASign", Digest::SHA1.hexdigest("ACCEPTURL=http://www.residencegoldwyn.fr/confirmationcerisepommefraise23AMOUNT=#{(stay_week_price)}cerisepommefraise23CANCELURL=http://www.residencegoldwyn.fr/payment_cancelcerisepommefraise23CN=#{@stay.user.name}cerisepommefraise23CURRENCY=EURcerisepommefraise23DECLINEURL=http://www.residencegoldwyn.fr/payment_errorcerisepommefraise23EMAIL=#{@stay.user.email}cerisepommefraise23EXCEPTIONURL=http://www.residencegoldwyn.fr/payment_warningcerisepommefraise23LANGUAGE=fr_FRcerisepommefraise23ORDERID=#{@stay.id}cerisepommefraise23OWNERADDRESS=#{@stay.user.try(:address)}cerisepommefraise23OWNERTELNO=#{@stay.user.try(:phone)}cerisepommefraise23PSPID=residencegoldwyncerisepommefraise23").upcase
+        =hidden_field_tag "SHASign", Digest::SHA1.hexdigest("ACCEPTURL=http://www.residencegoldwyn.fr/confirmationcerisepommefraise23AMOUNT=#{(stay_week_price)}cerisepommefraise23CANCELURL=http://www.residencegoldwyn.fr/payment_cancelcerisepommefraise23CN=#{@stay.user.name}cerisepommefraise23CURRENCY=EURcerisepommefraise23DECLINEURL=http://www.residencegoldwyn.fr/payment_errorcerisepommefraise23EMAIL=#{@stay.user.email}cerisepommefraise23EXCEPTIONURL=http://www.residencegoldwyn.fr/payment_warningcerisepommefraise23LANGUAGE=fr_FRcerisepommefraise23ORDERID=#{@stay.id}cerisepommefraise23OWNERADDRESS=#{@stay.user.try(:address)}cerisepommefraise23OWNERTELNO=#{@stay.user.try(:phone)}cerisepommefraise23PSPID=residencegoldwyncerisepommefraise23").upcase
 
-		=submit_tag "Accéder au paiement par carte bancaire", class: "cb"
+        =submit_tag "Accéder au paiement par carte bancaire", class: "cb"
 
 
-	= link_to "Accéder au paiement par virement bancaire sous 7 jours.", virement_path, class: "bank" 
+    = link_to "Accéder au paiement par virement bancaire sous 7 jours.", virement_path, class: "bank" 
