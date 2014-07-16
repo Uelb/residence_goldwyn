@@ -1,0 +1,196 @@
+.resa{
+	min-height:400px;
+}
+.particulier, .pro{
+	float:left;
+	width:250px;
+}
+.general{
+	width:900px;
+	margin:50px auto;
+	min-height: 400px;
+	font-size:1.3em;
+}
+
+.particulier a, .pro a, .connect a, .firstconnect a{
+	display:block;
+	width:200px;
+	height:30px;
+	line-height:30px;
+	text-decoration:none;
+	font-size:12px;
+	text-align:center;
+	color:#fff;
+	background:#c00;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.firstconnect a{
+	width:340px;
+}
+.imgLog{
+	margin-bottom: 10px;
+}
+.signup{
+	margin-bottom:50px;
+}
+.infogeneral{
+	margin-top:25px;
+}
+.align-right{
+	text-align:right;
+}
+input[type=submit]{
+	background: #ffae00;
+	padding:10px 20px;
+	margin-bottom:20px;
+	border:0;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	color:#fff;
+	font:bold 12px Arial, Helvetica, Tahoma;
+	cursor:pointer;
+}
+input[type=submit]:hover{
+	background: #ff9000;
+}
+input[type=submit].cb{
+	background: image-url("cb_logo.png") no-repeat left center transparent;
+	height:100px;
+	margin:30px 0;
+	padding-left:250px;
+	color:#333;
+	display:block;
+	font-weight:normal;
+	text-decoration:underline;
+	font-size: 1.2em;
+}
+a.bank{
+	border-top:1px solid #ccc;
+	background: image-url("bank.png") no-repeat left center transparent;
+	height:100px;
+	padding: 30px 0;
+	margin:0;
+	padding-left:250px;
+	color:#333;
+	display:block;
+	text-decoration:underline;
+	font-size: 1.2em;
+	line-height:100px;
+}
+.price{color:#333; font:bold 18px Arial, Helvetica, Tahoma; margin-bottom:5px;}
+.price .labelPrice{
+	font-size: 14px;
+	font-weight: normal;
+	color:#000;
+}
+#week-picker{
+	display:none;
+	position:absolute;
+	top: 60px;
+	left: 200px;
+}
+.new_user{
+	width:450px;
+	float:left;
+	display:block;
+	padding-left:5px;
+	border-left:1px solid #ccc;
+}
+.new_user input[type=search],.new_user input[type=email], .new_user input[type=text], .new_user input[type=password], , .new_user input[type=tel]{
+	width:170px;
+}
+input[type=search], .new_user input[type=text], .new_user input[type=password], .new_user input[type=tel], .new_user input[type=email]{
+	border:1px solid #aaa;
+	height:25px;
+	line-height: 25px;
+}
+.field{
+	margin-top:5px;
+	clear:both;
+	padding-bottom:5px;
+}
+.btnvalid{padding-left:120px;}
+
+.lbl{
+	float:left;
+	width:350px;
+}
+div.backto a{
+	display:block;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+	background:#c00;
+}
+.adress textarea{
+	height:35px;
+	width:170px;
+}
+input[type="text"], input[type="search"], input[type="mail"], textarea{
+	border:1px solid #ccc;
+}
+#initform input#fake_arrival_date, #initform input#fake_departure_date{
+	border:1px solid #fff;
+	margin:0;
+	padding:0;
+	text-indent:4px;
+	height:30px;
+	line-height:30px;
+	color:#fff;
+	width:80px;
+	padding-right:30px;
+	background: image-url("calendar.png") no-repeat right center transparent;
+}
+#initform input#fake_departure_date{
+	/*opacity: .4;*/
+}
+p.alert, p.notice{
+	position: relative;
+	z-index: 9999;
+	background: #c00;
+	margin: 0;
+	color: #fff;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 30px;
+}
+a.button{
+	width:250px;
+	display: block;
+	line-height: 35px;
+	border-radius: 5px;
+	background:#c00;
+	color:#fff;
+	margin-top:20px;
+	text-align: center;
+}
+p{margin:0;}
+.recap{
+	padding:2em;
+	border:1px solid #fc0;
+	color:#555;
+	background:#fbfbfb;
+}
+a.signout{
+	display:block;
+	height:30px;
+	line-height:30px;
+	position:absolute;
+	padding:0 2em 0 2.2em;
+	right:0;
+	top:0;
+	background:image-url("cross.png") no-repeat 2px center #c00;
+	color:#fff;
+	z-index: 9999;
+	text-decoration:none;
+}
+#agency_commentary{
+	width:200px;
+	height:75px;
+}
