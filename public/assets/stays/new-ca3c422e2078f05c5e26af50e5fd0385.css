@@ -1,0 +1,124 @@
+/* line 1, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+body {
+  background: #000;
+  color: #fff;
+  font: 11px arial, helvetica, tahoma;
+}
+
+/* line 6, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+a {
+  color: #c00;
+}
+
+/* line 9, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#logo {
+  background: url(/assets/logo-goldwyn.png) no-repeat center center;
+  height: 138px;
+  width: 180px;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  z-index: 1000;
+}
+
+/* line 18, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#logo h1 span {
+  text-indent: -1000em;
+  overflow: hidden;
+  outline: none;
+  display: block;
+}
+
+/* line 24, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#initform {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  padding: 20px 0 20px 15%;
+  height: 50px;
+  background: #222222;
+  color: #ffffff;
+  z-index: 500;
+}
+
+/* line 35, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+fieldset {
+  display: inline;
+  border: 0 none;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+/* line 36, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+a#nextslide {
+  background: url(/assets/next.png) no-repeat center center;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+}
+
+/* line 44, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+a#prevslide {
+  background: url(/assets/prev.png) no-repeat center center;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 20%;
+  right: 50%;
+}
+
+/* line 52, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#textHome {
+  position: absolute;
+  background: url(/assets/fond.png) repeat center center;
+  bottom: 30%;
+  right: 20px;
+  width: 300px;
+  padding: 25px;
+  color: #ffffff;
+}
+
+/* line 61, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#textHome h1 {
+  font-size: 18px;
+}
+
+/* line 64, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#textHome p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+/* line 68, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+.vignette {
+  float: left;
+  padding-right: 10px;
+}
+
+/* line 73, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#initform label, #initform input[type=text], #initform input[type=date] {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 77, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+  font-size: 11px;
+  color: #fff;
+  line-height: 20px;
+  width: 100%;
+  left: 0;
+  text-indent: 20px;
+  background: #000;
+}
+
+/* line 89, /Users/thomasthimothee/Documents/dev/Finished/residence_goldwyn/app/assets/stylesheets/stays/new.css.scss */
+div.backto {
+  display: none;
+}
