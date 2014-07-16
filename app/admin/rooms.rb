@@ -18,7 +18,7 @@ index do
 	column "Image" do |room|
 		link_to(image_tag(room.image.url(:thumb), :height => '100'), admin_room_path(room))
 	end
-	default_actions 
+	actions 
 end
 
 show do |room|
