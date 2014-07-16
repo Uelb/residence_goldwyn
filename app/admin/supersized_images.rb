@@ -1,4 +1,5 @@
 ActiveAdmin.register SupersizedImage do
+	permit_params :visible, :image
   index do
 		column :visible
 		column "Image" do |supersized_image|
@@ -22,7 +23,7 @@ ActiveAdmin.register SupersizedImage do
 	    f.input :visible
 	    f.input :image
 	  end
-	  f.buttons
+	  f.actions
 	end
 
 end

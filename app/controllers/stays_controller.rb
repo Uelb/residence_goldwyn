@@ -1,7 +1,7 @@
 class StaysController < ApplicationController  
   
   def new
-    @stay= Stay.find session[:stay_id] unless session[:stay_id].nil?
+    @stay= Stay.where(id: session[:stay_id]).first unless session[:stay_id].nil?
     @images_to_display= SupersizedImage.visible.map do |supersized|
       supersized.image.url
     end
