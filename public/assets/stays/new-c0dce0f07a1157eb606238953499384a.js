@@ -1,0 +1,1 @@
+jQuery(function(i){i.supersized({slide_interval:7e3,transition:1,transition_speed:1e3,slide_links:"blank",slides:images_to_display})});
