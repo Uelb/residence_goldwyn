@@ -1,36 +1,38 @@
-source 'http://rubygems.org'
-source 'http://gems.github.com'
+source 'https://rubygems.org'
 
-#############################################################
-#	Rails
-#############################################################
-gem 'rails', '3.2.6'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
-gem 'sass-rails', '~> 3.2.3'
-gem 'haml-rails'
-gem 'jquery-rails', '1.0.16'
-
-gem "paperclip", "~> 3.0"
-
-gem 'therubyracer'
-gem "rufus-scheduler"
-
-#############################################################
-#	Persistence
-#############################################################
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0'
 
 gem 'pg'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
-#############################################################
-#	Authentication
-#############################################################
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
 
-gem 'devise', '1.4.9'
-#############################################################
-#	Back office
-#############################################################
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
 
-gem 'activeadmin', '~> 0.4.0'
-gem 'meta_search', '>= 1.1.3'
-gem "country-select"
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'therubyracer', platforms: :ruby
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+
+gem "paperclip"
+gem 'haml-rails'
+gem 'jquery-ui-rails'
+gem "rufus-scheduler"
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activerecord-session_store'

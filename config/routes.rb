@@ -2,20 +2,22 @@ ResidenceGoldwyn::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-
+  devise_for :users
   root :to => "stays#new"
-  match '/:locale' => "stays#new", :locale => /en|fr/
+  get '/:locale' => "stays#new", :locale => /en|fr/
 
   scope "(:locale)", :locale => /en|fr/ do
+    devise_for :admin_users, ActiveAdmin::Devise.config   
+
     resources :stays, :only => [:index, :new, :create, :edit]
     resources :rooms, :only => [:index,:show]
     resources :agencies, :only => [:new, :create]
 
-    match "stays/waiting_for_transfer" => "stays#waiting_for_transfer", :via => :get
-    match 'agencies/sign_in' => "agencies#sign_in", :via => :get
-    match 'agencies/connect' => "agencies#connect", :via => :post
-    match 'agencies/summary' => "agencies#summary", :via => :get
-    match 'agencies/confirmation' => "agencies#confirmation", :via => :get
+    get "stays/waiting_for_transfer" => "stays#waiting_for_transfer"
+    get 'agencies/sign_in' => "agencies#sign_in"
+    post 'agencies/connect' => "agencies#connect"
+    get 'agencies/summary' => "agencies#summary"
+    get 'agencies/confirmation' => "agencies#confirmation"
 
     get 'payment' => "pages#payment", :as => 'payment'
     get 'before_payment' => "pages#before_payment", :as => "before_payment"
@@ -27,9 +29,6 @@ ResidenceGoldwyn::Application.routes.draw do
     get 'payment_error' => "pages#payment_error", :as => "payment_error"
     get 'confirmation' => "pages#confirmation", :as => "confirmation"
     get 'virement' => "pages#virement", :as => "virement"
-    devise_for :admin_users, ActiveAdmin::Devise.config   
-
-    devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions" }
 
   end
 
