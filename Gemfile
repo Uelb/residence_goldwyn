@@ -10,7 +10,6 @@ gem 'uglifier', '>= 1.0.3'
 gem 'sass-rails', '~> 3.2.3'
 gem 'haml-rails'
 gem 'jquery-rails', '1.0.16'
-gem 'coffee-filter'
 
 gem "paperclip", "~> 3.0"
 
