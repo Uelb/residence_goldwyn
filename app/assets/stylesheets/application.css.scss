@@ -157,7 +157,7 @@ input[type="text"], input[type="search"], input[type="mail"], textarea{
 	color:#fff;
 	width:80px;
 	padding-right:30px;
-	background: url(/assets/calendar.png) no-repeat right center transparent;
+	background: image-url("calendar.png") no-repeat right center transparent;
 }
 #initform input#fake_departure_date{
 	/*opacity: .4;*/
@@ -199,7 +199,7 @@ a.signout{
 	padding:0 2em 0 2.2em;
 	right:0;
 	top:0;
-	background:url(/assets/cross.png) no-repeat 2px center #c00;
+	background:image-url("cross.png") no-repeat 2px center #c00;
 	color:#fff;
 	z-index: 9999;
 	text-decoration:none;
